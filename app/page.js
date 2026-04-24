@@ -10,7 +10,6 @@ export default function Page() {
       <Hero />
       <About />
       <Projects />
-      <ProcessBanner />
       <Skills />
       <Contact />
       <Footer />
