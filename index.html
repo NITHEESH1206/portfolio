@@ -230,7 +230,16 @@
             </div>
           </div>
 
-          <form class="contact-form" id="contactForm" data-contact-fade>
+          <form class="contact-form" id="contactForm" data-contact-fade
+                action="https://api.web3forms.com/submit" method="POST">
+            <!-- Web3Forms required fields -->
+            <input type="hidden" name="access_key" value="4fe65786-b78d-4696-8925-73cdfb1a083c" />
+            <input type="hidden" name="subject" value="New project enquiry — Aether Studio" />
+            <input type="hidden" name="from_name" value="Aether Studio Website" />
+            <!-- Honeypot — bots fill this, humans don't -->
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"
+                   style="display:none !important" aria-hidden="true" />
+
             <div id="formContent">
               <div class="mono-label muted form-kicker">Project enquiry</div>
               <div class="fields">
@@ -239,10 +248,11 @@
                 <div class="field"><label for="company">Company</label><input id="company" name="company" type="text" /></div>
                 <div class="field"><label for="message">Brief</label><textarea id="message" name="message" rows="4" required></textarea></div>
               </div>
-              <button type="submit" class="btn btn-primary btn-full" data-hover>
-                <span>Send enquiry</span>
+              <button type="submit" id="submitBtn" class="btn btn-primary btn-full" data-hover>
+                <span id="submitLabel">Send enquiry</span>
                 <svg class="arrow" width="14" height="14" viewBox="0 0 14 14"><path d="M1 7h12m0 0L7.5 1.5M13 7l-5.5 5.5" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
               </button>
+              <p id="formError" class="mono-label form-error" hidden>Something went wrong. Please email directly — contact@aetherstudio.in</p>
               <p class="mono-label muted form-foot">Or email directly — contact@aetherstudio.in</p>
             </div>
             <div id="formSuccess" class="form-success" hidden>

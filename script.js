@@ -157,22 +157,71 @@
       });
     });
 
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
+
       const content = document.getElementById("formContent");
       const success = document.getElementById("formSuccess");
-      if (!content || !success) return;
-      gsap.to(content, {
-        opacity: 0,
-        y: 20,
-        duration: 0.5,
-        ease: "power3.out",
-        onComplete: () => {
-          content.hidden = true;
-          success.hidden = false;
-          gsap.fromTo(success, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.9, ease: "expo.out" });
+      const submitBtn = document.getElementById("submitBtn");
+      const submitLabel = document.getElementById("submitLabel");
+      const errorEl = document.getElementById("formError");
+      if (!content || !success || !submitBtn || !submitLabel) return;
+
+      // Reset error, set loading state
+      if (errorEl) errorEl.hidden = true;
+      const originalLabel = submitLabel.textContent;
+      submitLabel.textContent = "Sending…";
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = "0.7";
+      submitBtn.style.pointerEvents = "none";
+
+      try {
+        const formData = new FormData(form);
+        const payload = Object.fromEntries(formData.entries());
+
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json().catch(() => ({}));
+
+        if (res.ok && data.success) {
+          gsap.to(content, {
+            opacity: 0,
+            y: 20,
+            duration: 0.5,
+            ease: "power3.out",
+            onComplete: () => {
+              content.hidden = true;
+              success.hidden = false;
+              gsap.fromTo(
+                success,
+                { opacity: 0, y: 20 },
+                { opacity: 1, y: 0, duration: 0.9, ease: "expo.out" }
+              );
+              form.reset();
+              form.querySelectorAll(".field.has-value").forEach((f) => f.classList.remove("has-value"));
+            }
+          });
+        } else {
+          throw new Error((data && data.message) || "Submit failed");
         }
-      });
+      } catch (err) {
+        if (errorEl) {
+          errorEl.hidden = false;
+          gsap.fromTo(errorEl, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" });
+        }
+        // Restore button so user can retry
+        submitLabel.textContent = originalLabel;
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = "";
+        submitBtn.style.pointerEvents = "";
+      }
     });
   }
 

@@ -686,6 +686,11 @@ html, body, a, button, [data-hover] { cursor: none; }
 
 .contact-form .btn-full { margin-top: 40px; }
 .form-foot { margin-top: 24px; }
+.form-error {
+  margin-top: 16px;
+  color: #ff6b6b;
+  letter-spacing: 0.18em;
+}
 
 .form-success { display: flex; flex-direction: column; gap: 16px; padding-block: 32px; }
 .success-title {
