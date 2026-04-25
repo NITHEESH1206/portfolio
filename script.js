@@ -10,40 +10,33 @@
   const projects = [
     {
       n: "01",
-      client: "Nordlys Maison",
-      title: "Editorial commerce for a Nordic fashion house",
-      tags: ["E-commerce", "Headless", "Motion"],
-      year: "2026",
-      image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1800&q=85",
-      accent: "blue",
+      client: "Elegancia · Coonoor",
+      title: "Fine-dining experience for a hillside restaurant in the Nilgiris",
+      tags: ["Restaurant", "Reservations", "CMS"],
+      year: "2025",
+      image: "./elegancia.png",
+      accent: "violet",
       large: true
     },
     {
       n: "02",
-      client: "Ordinate Capital",
-      title: "Institutional-grade marketing site for a private fund",
-      tags: ["Brand site", "Next.js", "CMS"],
-      year: "2025",
-      image: "https://images.unsplash.com/photo-1554774853-aae0a22c8aa4?auto=format&fit=crop&w=1800&q=85",
-      accent: "violet"
+      client: "Bagaicha · Coonoor",
+      title: "Cinematic brand site for a feast amidst the Nilgiri mist",
+      tags: ["Brand site", "Motion", "Reservations"],
+      year: "2026",
+      image: "./bagaicha.png",
+      accent: "blue",
+      large: true
     },
     {
       n: "03",
-      client: "Forme Atelier",
-      title: "Cinematic portfolio for an architecture practice",
-      tags: ["Portfolio", "WebGL", "3D"],
-      year: "2025",
-      image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1800&q=85",
-      accent: "blue"
-    },
-    {
-      n: "04",
-      client: "Solace Hotels",
-      title: "Booking experience for a boutique hospitality group",
-      tags: ["Booking", "CMS", "Perf"],
-      year: "2024",
-      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1800&q=85",
-      accent: "violet"
+      client: "Reminds — SaaS",
+      title: "Your AI second brain on WhatsApp, captured in a single chat",
+      tags: ["SaaS", "AI", "WhatsApp Cloud API"],
+      year: "2026",
+      image: "./reminds.png",
+      accent: "violet",
+      large: true
     }
   ];
 
@@ -512,11 +505,164 @@
     });
   }
 
+  function setupCaseStudy() {
+    const section = document.getElementById("case-study");
+    if (!section) return;
+
+    // Each case-study title — independent line/word reveal
+    section.querySelectorAll("[data-cs-title]").forEach((title) => {
+      const split = waitForFontsAndSplit(title, { types: "lines, words", lineClass: "split-line" });
+      gsap.set(split.words, { yPercent: 120 });
+
+      window.ScrollTrigger.create({
+        trigger: title,
+        start: "top 82%",
+        onEnter: () => {
+          gsap.to(split.words, {
+            yPercent: 0,
+            duration: 1.2,
+            stagger: 0.06,
+            ease: "expo.out",
+            delay: 0.1
+          });
+        }
+      });
+    });
+
+    // Generic fade + slide for eyebrows, leads, captions, tech rows, CTA
+    gsap.utils.toArray("[data-cs-fade]").forEach((el, i) => {
+      gsap.to(el, {
+        opacity: 1, y: 0, duration: 1.1, ease: "expo.out",
+        delay: 0.1 + (i % 4) * 0.07,
+        scrollTrigger: { trigger: el, start: "top 88%" }
+      });
+    });
+
+    // Each hero media — scale-in then parallax inside its own frame
+    section.querySelectorAll("[data-cs-media]").forEach((media) => {
+      const img = media.querySelector(".cs-hero-img");
+
+      gsap.fromTo(media,
+        { opacity: 0, y: 60, scale: 0.96 },
+        {
+          opacity: 1, y: 0, scale: 1,
+          duration: 1.4, ease: "expo.out",
+          scrollTrigger: { trigger: media, start: "top 85%" }
+        }
+      );
+
+      if (img) {
+        gsap.to(img, {
+          yPercent: -8,
+          ease: "none",
+          scrollTrigger: {
+            trigger: media,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true
+          }
+        });
+      }
+    });
+
+    // Stats — staggered entrance, restart per article so each row reads as a unit
+    section.querySelectorAll(".cs-stats").forEach((row) => {
+      const stats = row.querySelectorAll("[data-cs-stat]");
+      stats.forEach((el, i) => {
+        gsap.fromTo(el,
+          { opacity: 0, y: 40 },
+          {
+            opacity: 1, y: 0,
+            duration: 1.1, ease: "expo.out",
+            delay: i * 0.08,
+            scrollTrigger: { trigger: row, start: "top 85%" }
+          }
+        );
+      });
+    });
+  }
+
+  function setupPricing() {
+    const section = document.getElementById("pricing");
+    if (!section) return;
+
+    // Generic fade-in for headings, lead, kickers
+    gsap.utils.toArray("[data-price-fade]").forEach((el, i) => {
+      gsap.to(el, {
+        opacity: 1, y: 0, duration: 1.1, ease: "expo.out",
+        delay: 0.1 + (i % 3) * 0.08,
+        scrollTrigger: { trigger: el, start: "top 88%" }
+      });
+    });
+
+    // Bullet list — staggered
+    const bullets = section.querySelectorAll("[data-price-bullet]");
+    if (bullets.length) {
+      gsap.fromTo(bullets,
+        { opacity: 0, y: 16 },
+        {
+          opacity: 1, y: 0,
+          duration: 0.9, ease: "expo.out",
+          stagger: 0.08,
+          scrollTrigger: { trigger: bullets[0], start: "top 88%" }
+        }
+      );
+    }
+
+    // Pricing card — scale + fade in
+    const card = section.querySelector("[data-price-card]");
+    if (card) {
+      gsap.fromTo(card,
+        { opacity: 0, y: 60, scale: 0.97 },
+        {
+          opacity: 1, y: 0, scale: 1,
+          duration: 1.4, ease: "expo.out",
+          scrollTrigger: { trigger: card, start: "top 85%" }
+        }
+      );
+    }
+
+    // Rupee number — count up to 24,999
+    const num = section.querySelector("[data-price-num]");
+    if (num) {
+      const target = 24999;
+      const counter = { v: 0 };
+      const formatter = new Intl.NumberFormat("en-IN");
+
+      gsap.fromTo(num,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1, y: 0,
+          duration: 0.8, ease: "expo.out",
+          scrollTrigger: { trigger: num, start: "top 85%" }
+        }
+      );
+
+      window.ScrollTrigger.create({
+        trigger: num,
+        start: "top 80%",
+        once: true,
+        onEnter: () => {
+          gsap.to(counter, {
+            v: target,
+            duration: 1.8,
+            ease: "power2.out",
+            onUpdate: () => {
+              num.textContent = formatter.format(Math.round(counter.v));
+            }
+          });
+        }
+      });
+    }
+  }
+
   function runAll() {
     setupHero();
     setupAbout();
     setupProjects();
+    setupCaseStudy();
     setupSkills();
+    setupPricing();
     setupContact();
     if (window.ScrollTrigger) window.ScrollTrigger.refresh();
   }
