@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080" role="img" aria-label="Aether Studios — Instagram profile">
+  <!-- Solid sage background -->
+  <rect width="1080" height="1080" fill="#7E9171"/>
+
+  <!-- Soft inner glow so the circular IG crop has subtle depth -->
+  <radialGradient id="g" cx="50%" cy="42%" r="60%">
+    <stop offset="0%"  stop-color="#9CAF88" stop-opacity="0.55"/>
+    <stop offset="60%" stop-color="#7E9171" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="1080" height="1080" fill="url(#g)"/>
+
+  <!-- Mark — centered, sized for ~58% of canvas so the IG circle crop never touches it -->
+  <g transform="translate(338 338) scale(16.83)">
+    <path d="M21 3c0 6-3 12-9 13C6.5 16.5 3 13 3 8c0-3 2-5 5-5 4 0 5 4 9 0Z" fill="#FFFFFF"/>
+    <path d="M3 21c4-3 8-7 12-13" fill="none" stroke="#FFFFFF" stroke-width="1.4" stroke-linecap="round"/>
+  </g>
+</svg>

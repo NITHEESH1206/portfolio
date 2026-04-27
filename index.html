@@ -3,29 +3,49 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="theme-color" content="#0A0A0A" />
-  <title>Aether Studio — Website Developer for premium brands</title>
-  <meta name="description" content="I design and build high-performance websites for ambitious brands. Designed to convert. Engineered to scale." />
+  <meta name="theme-color" content="#F6F2EA" />
+  <title>Aether Studios — Restaurant Growth Specialists · Fill tables, not just feeds</title>
+  <meta name="description" content="Aether Studios is a restaurant marketing agency that helps fine-dining, cafés and cloud kitchens get fully booked through strategic content, local SEO, paid ads and WhatsApp retention." />
+  <meta name="keywords" content="restaurant marketing agency, restaurant social media marketing, local SEO for restaurants, restaurant growth agency, cafe marketing, cloud kitchen marketing" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" />
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
-<script defer src="/_vercel/insights/script.js"></script>
-<body class="grain">
+<body>
+
+  <!-- AMBIENT FLOWING BACKGROUND -->
+  <div class="bg-flow" aria-hidden>
+    <span class="bg-blob bg-blob-1"></span>
+    <span class="bg-blob bg-blob-2"></span>
+    <span class="bg-blob bg-blob-3"></span>
+    <span class="bg-blob bg-blob-4"></span>
+    <svg class="bg-grid" width="100%" height="100%" preserveAspectRatio="none" aria-hidden>
+      <defs>
+        <pattern id="dotgrid" width="32" height="32" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="1" r="1" fill="currentColor"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#dotgrid)"/>
+    </svg>
+  </div>
 
   <!-- LOADER -->
   <div class="loader-root" id="loader">
-    <div class="hero-sheen"></div>
     <div class="loader-inner">
-      <div class="loader-logo" id="loaderLogo">
-        <span class="dot"></span>
-        <span class="mono-label">AETHER / STUDIO</span>
+      <div class="loader-mark" id="loaderMark">
+        <span class="loader-leaf">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
+            <path d="M21 3c0 6-3 12-9 13C6.5 16.5 3 13 3 8c0-3 2-5 5-5 4 0 5 4 9 0Z" fill="currentColor"/>
+            <path d="M3 21c4-3 8-7 12-13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="mono-label">AETHER · STUDIOS</span>
       </div>
-      <div class="loader-num grad-text" id="loaderNum">000</div>
+      <div class="loader-num" id="loaderNum">000</div>
       <div class="loader-bar"><div id="loaderBar"></div></div>
     </div>
   </div>
@@ -38,20 +58,26 @@
   <header class="nav" id="nav">
     <div class="container nav-inner">
       <a href="#top" class="brand" data-hover>
-        <span class="brand-dot"></span>
-        <span class="mono-label">AETHER</span>
+        <span class="brand-mark">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+            <path d="M21 3c0 6-3 12-9 13C6.5 16.5 3 13 3 8c0-3 2-5 5-5 4 0 5 4 9 0Z" fill="currentColor"/>
+            <path d="M3 21c4-3 8-7 12-13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand-text">Aether <em>Studios</em></span>
       </a>
+
       <nav class="nav-links">
-        <a href="#work" class="nav-link" data-hover>Work</a>
-        <a href="#case-study" class="nav-link" data-hover>Case study</a>
-        <a href="#about" class="nav-link" data-hover>About</a>
-        <a href="#skills" class="nav-link" data-hover>Skills</a>
-        <a href="#pricing" class="nav-link" data-hover>Pricing</a>
+        <a href="#services" class="nav-link" data-hover>Services</a>
+        <a href="#results" class="nav-link" data-hover>Results</a>
+        <a href="#process" class="nav-link" data-hover>Process</a>
+        <a href="#testimonials" class="nav-link" data-hover>Stories</a>
         <a href="#contact" class="nav-link" data-hover>Contact</a>
       </nav>
-      <a href="#contact" class="btn btn-ghost btn-sm" data-hover>
-        Start a project
-        <span class="bar" aria-hidden></span>
+
+      <a href="#contact" class="btn btn-primary btn-sm nav-cta" data-hover>
+        Apply for partnership
+        <span class="arrow-mini" aria-hidden>→</span>
       </a>
     </div>
   </header>
@@ -60,492 +86,487 @@
 
     <!-- HERO -->
     <section class="hero" id="top">
-      <div class="hero-sheen" data-hero-sheen></div>
-      <span class="top-rule"></span>
-
+      <div class="hero-grain"></div>
       <div class="container hero-inner">
-        <div class="hero-meta-row">
-          <div class="hero-meta" data-hero-meta>
-            <span class="pulse blue"></span>
-            <span class="mono-label">Available · Q2 2026</span>
-          </div>
-          <div class="hero-meta-right mono-label" data-hero-meta>
-            Senior Website Developer — building premium digital products for founders, agencies &amp; studios.
-          </div>
+
+        <div class="hero-pill" data-hero-meta>
+          <span class="dot sage"></span>
+          <span class="mono-label">Restaurant Growth Specialists · Est. 2024</span>
         </div>
 
         <h1 class="display hero-title" data-hero-title>
-          I craft websites of quiet distinction.
+          Turn your restaurant into a fully booked brand.
         </h1>
 
-        <div class="hero-bottom">
-          <p class="hero-sub" data-hero-sub>
-            Designed to convert. Engineered to scale.<br/>
-            Crafted for brands who refuse to look like everyone else.
-          </p>
-          <div class="hero-ctas">
-            <a href="#contact" class="btn btn-primary" data-hero-cta data-hover>
-              <span>Start a project</span>
-              <svg class="arrow" width="14" height="14" viewBox="0 0 14 14"><path d="M1 7h12m0 0L7.5 1.5M13 7l-5.5 5.5" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
-            </a>
-            <a href="#work" class="btn btn-ghost" data-hero-cta data-hover>
-              <span>See work</span>
-            </a>
-          </div>
-        </div>
-      </div>
+        <p class="hero-sub" data-hero-sub>
+          We help restaurants attract more customers through strategic content, local SEO,
+          and high-performing ad campaigns — engineered for measurable bookings, not vanity metrics.
+        </p>
 
-      <div class="hero-scroll" data-hero-scroll>
-        <span class="mono-label">Scroll</span>
-        <span class="scroll-tick"></span>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <div class="container">
-        <div class="sec-head" data-about-fade>
-          <span class="mono-label">01 — About</span>
-          <span class="hairline"></span>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-aside" data-about-fade>
-            <p class="mono-label muted">A studio of one, built for brands who care about detail.</p>
-          </div>
-          <div class="about-main">
-            <p class="display about-p" data-about-p>
-              I craft high-performance, cinematic websites for ambitious founders and modern brands.
-              Every interaction is designed, every millisecond engineered — so your product feels as premium
-              online as it does in the room.
-            </p>
-          </div>
-        </div>
-
-        <div class="stats">
-          <div class="stat"><div class="display stat-num" data-stat-num>60+</div><div class="mono-label" data-about-fade>Shipped projects</div></div>
-          <div class="stat"><div class="display stat-num" data-stat-num>9y</div><div class="mono-label" data-about-fade>Crafting on the web</div></div>
-          <div class="stat"><div class="display stat-num" data-stat-num>100</div><div class="mono-label" data-about-fade>Lighthouse obsession</div></div>
-          <div class="stat"><div class="display stat-num" data-stat-num>&infin;</div><div class="mono-label" data-about-fade>Revisions, until right</div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="section" id="work">
-      <div class="container">
-        <div class="projects-head">
-          <div>
-            <div class="sec-head" data-proj-head>
-              <span class="mono-label">02 — Selected work</span>
-              <span class="hairline"></span>
-            </div>
-            <h2 class="display projects-title" data-proj-head>
-              Work that earns <em>its place.</em>
-            </h2>
-          </div>
-          <p class="mono-label projects-aside" data-proj-head>
-            A selection of engagements from 2024–2026. Full case studies on request.
-          </p>
-        </div>
-
-        <div class="projects-grid" id="projectsGrid"></div>
-
-        <div class="projects-cta" data-proj-head>
-          <a href="#contact" class="btn btn-ghost" data-hover><span>Request the full portfolio</span></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- CASE STUDIES · ELEGANCIA + BAGAICHA -->
-    <section class="section case-study" id="case-study">
-      <div class="container">
-
-        <div class="sec-head" data-cs-fade>
-          <span class="mono-label">Featured case studies</span>
-          <span class="hairline"></span>
-          <span class="mono-label muted">2025–2026 · Hospitality</span>
-        </div>
-
-        <!-- ============ ELEGANCIA ============ -->
-        <article class="cs-article" id="cs-elegancia">
-          <div class="cs-headline-row">
-            <div class="cs-eyebrow" data-cs-fade>
-              <span class="cs-dot violet"></span>
-              <span class="mono-label">Elegancia · Coonoor · Fine dining</span>
-            </div>
-
-            <h2 class="display cs-title" data-cs-title>
-              An old-world dining room, reborn online.
-            </h2>
-
-            <p class="cs-lead" data-cs-fade>
-              Elegancia needed a digital experience that matched the warmth of its candle-lit dining room —
-              a place a guest could feel before they ever booked a table. The brief: turn a curious diner
-              into a confirmed reservation in under sixty seconds, on any device.
-            </p>
-          </div>
-
-          <div class="cs-hero-media" data-cs-media>
-            <div class="cs-hero-frame">
-              <div class="cs-hero-img" style="background-image:url('./elegancia.png')"></div>
-              <div class="cs-hero-overlay"></div>
-              <div class="cs-hero-meta">
-                <span class="mono-label">elegancia.in</span>
-                <span class="cs-dot violet"></span>
-              </div>
-            </div>
-            <div class="cs-hero-caption mono-label muted" data-cs-fade>
-              Editorial home page · single-page reservation flow · sunset-hour photography
-            </div>
-          </div>
-
-          <div class="cs-grid">
-            <div class="cs-block" data-cs-fade>
-              <div class="cs-block-num display">01</div>
-              <div class="cs-block-label mono-label">The challenge</div>
-              <p class="cs-block-text">
-                The previous site was a list — a menu PDF, a phone number and a contact form. Reservations
-                relied on manual call-backs, which capped covers at the host's response time. Mobile traffic
-                was 78% of visits, but the experience was built desktop-first.
-              </p>
-            </div>
-            <div class="cs-block" data-cs-fade>
-              <div class="cs-block-num display">02</div>
-              <div class="cs-block-label mono-label">The approach</div>
-              <p class="cs-block-text">
-                A single, scroll-driven page paired with a real-time reservation engine. In-house photography,
-                editorial typography and a confident motion language. Bookings flow directly to the host stand
-                via a lightweight CRM, with deposit-based confirmation for parties of six or more.
-              </p>
-            </div>
-            <div class="cs-block" data-cs-fade>
-              <div class="cs-block-num display">03</div>
-              <div class="cs-block-label mono-label">The outcome</div>
-              <p class="cs-block-text">
-                Mobile reservations rose from 12% to 64% of total bookings within eight weeks. Average
-                time-to-book dropped from four minutes to forty-seven seconds. Cancellation rate fell by
-                half thanks to deposit confirmation.
-              </p>
-            </div>
-          </div>
-
-          <div class="cs-stats">
-            <div class="cs-stat" data-cs-stat>
-              <div class="display cs-stat-num">64<span class="cs-stat-unit">%</span></div>
-              <div class="mono-label">Mobile reservations (from 12%)</div>
-            </div>
-            <div class="cs-stat" data-cs-stat>
-              <div class="display cs-stat-num">47<span class="cs-stat-unit">s</span></div>
-              <div class="mono-label">Average time to book</div>
-            </div>
-            <div class="cs-stat" data-cs-stat>
-              <div class="display cs-stat-num">4.7<span class="cs-stat-unit">/5</span></div>
-              <div class="mono-label">Google rating · 848 reviews</div>
-            </div>
-            <div class="cs-stat" data-cs-stat>
-              <div class="display cs-stat-num">100<span class="cs-stat-unit"></span></div>
-              <div class="mono-label">Lighthouse, mobile</div>
-            </div>
-          </div>
-
-          <div class="cs-tech" data-cs-fade>
-            <div class="mono-label muted cs-tech-label">Built with</div>
-            <div class="cs-tech-row">
-              <span class="cs-chip">Next.js</span>
-              <span class="cs-chip">Tailwind CSS</span>
-              <span class="cs-chip">Sanity CMS</span>
-              <span class="cs-chip">Stripe deposits</span>
-              <span class="cs-chip">Custom reservation API</span>
-              <span class="cs-chip">Vercel</span>
-              <span class="cs-chip">GSAP · Lenis</span>
-            </div>
-          </div>
-        </article>
-
-        <div class="cs-divider" aria-hidden></div>
-
-        <!-- ============ BAGAICHA ============ -->
-        <article class="cs-article" id="cs-bagaicha">
-          <div class="cs-headline-row">
-            <div class="cs-eyebrow" data-cs-fade>
-              <span class="cs-dot blue"></span>
-              <span class="mono-label">Bagaicha · Coonoor · Modern dining</span>
-            </div>
-
-            <h2 class="display cs-title" data-cs-title>
-              A feast amidst the Nilgiri mist.
-            </h2>
-
-            <p class="cs-lead" data-cs-fade>
-              Bagaicha is a destination restaurant, hidden in Sim's Park. The site had to feel like the room
-              itself — slow, low-lit, deliberate — and convert mist-soaked travellers into confirmed tables
-              long before they reach the gate.
-            </p>
-          </div>
-
-          <div class="cs-hero-media" data-cs-media>
-            <div class="cs-hero-frame">
-              <div class="cs-hero-img" style="background-image:url('./bagaicha.png')"></div>
-              <div class="cs-hero-overlay"></div>
-              <div class="cs-hero-meta">
-                <span class="mono-label">bagaicha.in</span>
-                <span class="cs-dot blue"></span>
-              </div>
-            </div>
-            <div class="cs-hero-caption mono-label muted" data-cs-fade>
-              Cinematic landing · ambient motion · sub-one-second mobile load
-            </div>
-          </div>
-
-          <div class="cs-grid">
-            <div class="cs-block" data-cs-fade>
-              <div class="cs-block-num display">01</div>
-              <div class="cs-block-label mono-label">The challenge</div>
-              <p class="cs-block-text">
-                Most restaurant sites shout. Bagaicha needed the opposite — a quiet, cinematic experience
-                that built trust with high-spend diners booking from across India. Performance had to hold
-                up on patchy hill connections without compromising the visual language.
-              </p>
-            </div>
-            <div class="cs-block" data-cs-fade>
-              <div class="cs-block-num display">02</div>
-              <div class="cs-block-label mono-label">The approach</div>
-              <p class="cs-block-text">
-                A motion-led brand site with editorial typography, slow scroll choreography and ambient video
-                used sparingly. A custom reservation flow integrated with the kitchen's table-management system,
-                plus a private-dining enquiry path. Total image budget kept under 1.2&nbsp;MB.
-              </p>
-            </div>
-            <div class="cs-block" data-cs-fade>
-              <div class="cs-block-num display">03</div>
-              <div class="cs-block-label mono-label">The outcome</div>
-              <p class="cs-block-text">
-                Direct bookings tripled in the first quarter. Enquiry-to-booking conversion lifted from 18%
-                to 41%. The site overtook Instagram and aggregator listings combined to become Bagaicha's
-                strongest acquisition channel.
-              </p>
-            </div>
-          </div>
-
-          <div class="cs-stats">
-            <div class="cs-stat" data-cs-stat>
-              <div class="display cs-stat-num">3<span class="cs-stat-unit">x</span></div>
-              <div class="mono-label">Direct bookings, first quarter</div>
-            </div>
-            <div class="cs-stat" data-cs-stat>
-              <div class="display cs-stat-num">41<span class="cs-stat-unit">%</span></div>
-              <div class="mono-label">Enquiry-to-booking (from 18%)</div>
-            </div>
-            <div class="cs-stat" data-cs-stat>
-              <div class="display cs-stat-num">0.9<span class="cs-stat-unit">s</span></div>
-              <div class="mono-label">LCP on slow 3G</div>
-            </div>
-            <div class="cs-stat" data-cs-stat>
-              <div class="display cs-stat-num">99<span class="cs-stat-unit"></span></div>
-              <div class="mono-label">Lighthouse, all categories</div>
-            </div>
-          </div>
-
-          <div class="cs-tech" data-cs-fade>
-            <div class="mono-label muted cs-tech-label">Built with</div>
-            <div class="cs-tech-row">
-              <span class="cs-chip">Next.js</span>
-              <span class="cs-chip">GSAP · Lenis</span>
-              <span class="cs-chip">Sanity CMS</span>
-              <span class="cs-chip">Cloudflare</span>
-              <span class="cs-chip">Edge functions</span>
-              <span class="cs-chip">Stripe</span>
-              <span class="cs-chip">Custom reservation API</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Single closing CTA -->
-        <div class="cs-cta-wrap" data-cs-fade>
+        <div class="hero-ctas" data-hero-cta-row>
           <a href="#contact" class="btn btn-primary" data-hover>
-            <span>Build the next one with me</span>
-            <svg class="arrow" width="14" height="14" viewBox="0 0 14 14"><path d="M1 7h12m0 0L7.5 1.5M13 7l-5.5 5.5" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
+            Apply for a Growth Partnership
+            <span class="arrow-mini" aria-hidden>→</span>
+          </a>
+          <a href="#results" class="btn btn-outline" data-hover>
+            See our results
           </a>
         </div>
 
+        <p class="hero-trust mono-label" data-hero-meta>
+          Partnering with ambitious restaurants to deliver measurable growth.
+        </p>
+
+        <div class="hero-stats" data-hero-stats>
+          <div class="hero-stat"><strong>+182%</strong><span class="mono-label">avg. reservation lift</span></div>
+          <div class="hero-stat"><strong>5.2x</strong><span class="mono-label">return on ad spend</span></div>
+          <div class="hero-stat"><strong>4.7★</strong><span class="mono-label">portfolio rating</span></div>
+          <div class="hero-stat"><strong>12+</strong><span class="mono-label">restaurants scaled</span></div>
+        </div>
+
+        <div class="hero-visual" data-hero-visual>
+          <div class="hero-card hero-card-1" style="background-image:url('./elegancia.png')"></div>
+          <div class="hero-card hero-card-2" style="background-image:url('./bagaicha.png')"></div>
+          <div class="hero-card hero-card-3" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80')"></div>
+        </div>
+
       </div>
     </section>
 
-    <!-- PROCESS MARQUEE -->
-    <section class="marquee-section">
-      <div class="marquee">
-        <div class="marquee-track" id="processMarquee"></div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section class="section" id="skills">
+    <!-- PROBLEM → SOLUTION -->
+    <section class="section section-problem" id="problem">
       <div class="container">
-        <div class="sec-head" data-skill-head>
-          <span class="mono-label">03 — Capabilities</span>
+        <div class="sec-head" data-fade>
+          <span class="mono-label">01 — The reality</span>
           <span class="hairline"></span>
         </div>
 
-        <h2 class="display skills-title" data-skill-head>
-          A full-stack toolkit, obsessively refined.
+        <h2 class="display section-title" data-split>
+          Great food alone doesn't fill tables anymore.
         </h2>
 
-        <div class="skills-grid" id="skillsGrid"></div>
-      </div>
+        <div class="problems-grid">
+          <div class="problem-card" data-fade>
+            <div class="problem-num">01</div>
+            <h3>Empty tables despite great food.</h3>
+            <p>Tuesdays, Wednesdays and the long stretch between weekends — your floor isn't earning while rent and salaries keep ticking.</p>
+          </div>
+          <div class="problem-card" data-fade>
+            <div class="problem-num">02</div>
+            <h3>Invisible on Google.</h3>
+            <p>People searching "best dinner near me" can't find you. Aggregator listings outrank your own brand on the first page.</p>
+          </div>
+          <div class="problem-card" data-fade>
+            <div class="problem-num">03</div>
+            <h3>Inconsistent on social.</h3>
+            <p>Posts that get six likes. A reel here, a story there, no rhythm, no reservation funnel. Engagement isn't the metric — bookings are.</p>
+          </div>
+          <div class="problem-card" data-fade>
+            <div class="problem-num">04</div>
+            <h3>Bleeding money on ads.</h3>
+            <p>Boosted posts that don't convert. Ads that show your menu but never lead to a reservation. Spend without strategy is just expensive marketing.</p>
+          </div>
+        </div>
 
-      <div class="marquee tech-marquee">
-        <div class="marquee-track" id="techMarquee"></div>
+        <div class="problem-bridge" data-fade>
+          <span class="bridge-line"></span>
+          <span class="mono-label">We fix all four — as a system, not a service list.</span>
+        </div>
       </div>
     </section>
 
-    <!-- PRICING -->
-    <section class="section pricing-section" id="pricing">
+    <!-- SERVICES -->
+    <section class="section section-services" id="services">
       <div class="container">
-        <div class="sec-head" data-price-fade>
-          <span class="mono-label">04 — Investment</span>
+        <div class="sec-head" data-fade>
+          <span class="mono-label">02 — What we do</span>
           <span class="hairline"></span>
-          <span class="mono-label muted">INR · Project-based</span>
         </div>
 
-        <div class="pricing-grid">
-          <div class="pricing-intro">
-            <h2 class="display pricing-title" data-price-fade>
-              Honest pricing for honest work.
-            </h2>
-            <p class="pricing-lead" data-price-fade>
-              Every engagement is shaped to its brand and scope, but the floor is fixed.
-              No hidden fees, no surprise invoices, no inflated retainers — just a clear number
-              and a calm process.
+        <div class="services-head">
+          <h2 class="display section-title" data-split>
+            Five engines that compound into a fully booked brand.
+          </h2>
+          <p class="section-lead" data-fade>
+            Every service is designed for one outcome — more diners walking through your door.
+            We don't sell deliverables, we sell occupied tables.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card service-feature" data-fade>
+            <div class="service-num">01</div>
+            <div class="service-icon" aria-hidden>
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                <path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="9" cy="11" r="1.4" fill="currentColor"/>
+                <path d="M4 16l5-3 4 2 7-5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              </svg>
+            </div>
+            <h3>Social Media Management</h3>
+            <p class="service-promise">Turn your Instagram into a customer magnet.</p>
+            <p class="service-text">
+              Strategic content calendars, story funnels and reels engineered for saves, shares and DMs that convert
+              into reservations — not just engagement.
             </p>
-            <ul class="pricing-bullets">
-              <li data-price-bullet><span class="dot"></span><span>Fixed-scope quote within 24&nbsp;hours of brief</span></li>
-              <li data-price-bullet><span class="dot"></span><span>50% to start · 50% on launch</span></li>
-              <li data-price-bullet><span class="dot"></span><span>Direct line to me — no account managers</span></li>
-              <li data-price-bullet><span class="dot"></span><span>30 days of post-launch refinements, included</span></li>
+            <ul class="service-list">
+              <li>Content calendar &amp; rituals</li>
+              <li>Reels &amp; story funnel</li>
+              <li>DM-to-reservation flow</li>
             </ul>
-          </div>
+          </article>
 
-          <aside class="pricing-card" data-price-card>
-            <div class="pricing-card-shine" aria-hidden></div>
-            <div class="pricing-card-inner">
-              <div class="pricing-kicker">
-                <span class="cs-dot violet"></span>
-                <span class="mono-label">Starting at</span>
+          <article class="service-card" data-fade>
+            <div class="service-num">02</div>
+            <div class="service-icon" aria-hidden>
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                <circle cx="12" cy="9" r="4" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M5 21c1-3 4-5 7-5s6 2 7 5" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <h3>Content Production</h3>
+            <p class="service-promise">Premium visuals that make people crave your food.</p>
+            <p class="service-text">
+              On-site shoots, food styling, motion. Imagery and reels that elevate your brand to fine-dining tier
+              — the kind that gets reposted.
+            </p>
+          </article>
+
+          <article class="service-card" data-fade>
+            <div class="service-num">03</div>
+            <div class="service-icon" aria-hidden>
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                <circle cx="12" cy="11" r="3" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M12 2c4.5 4 7 7.5 7 11 0 4-3 8-7 9-4-1-7-5-7-9 0-3.5 2.5-7 7-11Z" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <h3>Local SEO</h3>
+            <p class="service-promise">Dominate Google and get discovered nearby.</p>
+            <p class="service-text">
+              Google Business Profile optimisation, review velocity, local schema and city-pages so the people
+              one search away find you first.
+            </p>
+          </article>
+
+          <article class="service-card" data-fade>
+            <div class="service-num">04</div>
+            <div class="service-icon" aria-hidden>
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                <path d="M3 19V8l9-5 9 5v11" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M9 19v-6h6v6" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <h3>Paid Advertising</h3>
+            <p class="service-promise">Drive consistent bookings with data-driven ads.</p>
+            <p class="service-text">
+              Meta and Google campaigns built around reservation events — not impressions. Weekly optimisation,
+              transparent reporting, profit-positive only.
+            </p>
+          </article>
+
+          <article class="service-card" data-fade>
+            <div class="service-num">05</div>
+            <div class="service-icon" aria-hidden>
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                <path d="M4 5h16v11H8l-4 4V5Z" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M8 10h8M8 13h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>WhatsApp &amp; Retention</h3>
+            <p class="service-promise">Convert inquiries into loyal regulars.</p>
+            <p class="service-text">
+              Automated WhatsApp flows, reservation reminders, occasion campaigns and loyalty rituals that
+              quietly multiply your repeat-diner base.
+            </p>
+          </article>
+
+          <article class="service-card" data-fade>
+            <div class="service-num">06</div>
+            <div class="service-icon" aria-hidden>
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                <rect x="3" y="4" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M3 8h18" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M8 13l-2 2 2 2M14 13l2 2-2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Web Development</h3>
+            <p class="service-promise">A website that books tables while you sleep.</p>
+            <p class="service-text">
+              Hand-coded restaurant sites built for speed, SEO and direct reservations. Premium photography,
+              cinematic motion, integrated booking flows — engineered to outrank aggregators on your own brand.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="section section-results" id="results">
+      <div class="container">
+        <div class="sec-head" data-fade>
+          <span class="mono-label">03 — Proof in numbers</span>
+          <span class="hairline"></span>
+        </div>
+
+        <div class="results-head">
+          <h2 class="display section-title" data-split>
+            Real restaurants. Measurable lift.
+          </h2>
+          <p class="section-lead" data-fade>
+            A snapshot of what 90 days of deliberate work looks like, across three of our recent partnerships.
+          </p>
+        </div>
+
+        <div class="results-grid">
+          <article class="result-card" data-fade>
+            <div class="result-media" style="background-image:url('./elegancia.png')"></div>
+            <div class="result-body">
+              <div class="result-tag mono-label">Elegancia · Fine dining</div>
+              <div class="result-stats">
+                <div><strong>+212%</strong><span class="mono-label">Instagram reach</span></div>
+                <div><strong>2.1×</strong><span class="mono-label">Reservations</span></div>
+                <div><strong>4.7★</strong><span class="mono-label">848 reviews</span></div>
               </div>
-
-              <div class="pricing-amount">
-                <span class="pricing-currency display">&#8377;</span>
-                <span class="pricing-number display" data-price-num>24,999</span>
-              </div>
-
-              <div class="pricing-meta mono-label muted">
-                Per project · payable in INR · GST extra where applicable
-              </div>
-
-              <div class="pricing-includes">
-                <div class="mono-label muted pricing-includes-label">What's included</div>
-                <ul>
-                  <li><span class="tick">✓</span> Strategy &amp; site architecture</li>
-                  <li><span class="tick">✓</span> Custom design &amp; motion system</li>
-                  <li><span class="tick">✓</span> Hand-coded build · Next.js or static</li>
-                  <li><span class="tick">✓</span> CMS setup · Sanity, Contentful or static</li>
-                  <li><span class="tick">✓</span> Performance &amp; SEO foundations</li>
-                  <li><span class="tick">✓</span> Deploy &amp; handover · Vercel / Cloudflare</li>
-                </ul>
-              </div>
-
-              <a href="#contact" class="btn btn-primary btn-full pricing-cta" data-hover>
-                <span>Request a fixed quote</span>
-                <svg class="arrow" width="14" height="14" viewBox="0 0 14 14"><path d="M1 7h12m0 0L7.5 1.5M13 7l-5.5 5.5" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
-              </a>
-
-              <p class="pricing-foot mono-label muted">
-                Larger scopes — SaaS, e-commerce, multi-locale — quoted bespoke.
+              <p class="result-quote">
+                "Weekday covers stopped being a problem. Our weeknight floor is now booked four days ahead."
               </p>
             </div>
-          </aside>
+          </article>
+
+          <article class="result-card" data-fade>
+            <div class="result-media" style="background-image:url('./bagaicha.png')"></div>
+            <div class="result-body">
+              <div class="result-tag mono-label">Bagaicha · Modern dining</div>
+              <div class="result-stats">
+                <div><strong>+304%</strong><span class="mono-label">Instagram reach</span></div>
+                <div><strong>3×</strong><span class="mono-label">Direct bookings</span></div>
+                <div><strong>5.2×</strong><span class="mono-label">Return on ad spend</span></div>
+              </div>
+              <p class="result-quote">
+                "Aether replaced three vendors and a freelancer. We finally have one team accountable for growth."
+              </p>
+            </div>
+          </article>
+
         </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section section-testimonials" id="testimonials">
+      <div class="container">
+        <div class="sec-head" data-fade>
+          <span class="mono-label">04 — Stories</span>
+          <span class="hairline"></span>
+        </div>
+
+        <h2 class="display section-title testimonials-title" data-split>
+          Owners who stopped chasing trends and started counting covers.
+        </h2>
+
+        <div class="testimonials-grid">
+          <figure class="testimonial-card" data-fade>
+            <blockquote>
+              "We were burning a lakh a month on boosted posts. In the first quarter with Aether, ad spend dropped
+              by half and reservations doubled. They actually understand restaurant economics."
+            </blockquote>
+            <figcaption>
+              <div class="testimonial-name">Rohan Mehta</div>
+              <div class="mono-label muted">Owner · Elegancia, Coonoor</div>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial-card" data-fade>
+            <blockquote>
+              "The before/after is night and day. Our Google profile went from buried to first result for
+              'best dinner Coonoor.' Tourists land on our site, not on a listing site."
+            </blockquote>
+            <figcaption>
+              <div class="testimonial-name">Aanya Krishnan</div>
+              <div class="mono-label muted">Founder · Bagaicha</div>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section section-process" id="process">
+      <div class="container">
+        <div class="sec-head" data-fade>
+          <span class="mono-label">05 — How we work</span>
+          <span class="hairline"></span>
+        </div>
+
+        <h2 class="display section-title" data-split>
+          A four-step system, not a guessing game.
+        </h2>
+
+        <ol class="process-list">
+          <li class="process-step" data-fade>
+            <div class="process-num display">01</div>
+            <div class="process-body">
+              <h3>Audit</h3>
+              <p>We analyse your funnel end-to-end — Google profile, social presence, ad accounts, reservation flow and brand. You receive a 14-page Growth Blueprint within seven days.</p>
+            </div>
+          </li>
+          <li class="process-step" data-fade>
+            <div class="process-num display">02</div>
+            <div class="process-body">
+              <h3>Strategy</h3>
+              <p>One ninety-day plan — content rituals, ad architecture, SEO targets and retention rituals. Built around your kitchen capacity, not an agency template.</p>
+            </div>
+          </li>
+          <li class="process-step" data-fade>
+            <div class="process-num display">03</div>
+            <div class="process-body">
+              <h3>Execution</h3>
+              <p>We shoot, write, ship and run the ads. You see weekly progress, monthly reviews and a single dashboard tracking the only metric that matters — bookings.</p>
+            </div>
+          </li>
+          <li class="process-step" data-fade>
+            <div class="process-num display">04</div>
+            <div class="process-body">
+              <h3>Growth</h3>
+              <p>Quarter on quarter, we compound what works and prune what doesn't. Most partners are still with us in year two — the work just keeps paying for itself.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- SCARCITY STRIP -->
+    <section class="scarcity-strip" data-fade>
+      <div class="container scarcity-inner">
+        <span class="dot sage pulse"></span>
+        <p class="mono-label">
+          Limited onboarding · We accept three new restaurants per month to protect quality of execution.
+        </p>
+        <a href="#contact" class="scarcity-link" data-hover>Check availability →</a>
+      </div>
+    </section>
+
+    <!-- LEAD CAPTURE -->
+    <section class="section section-lead sage-section" id="lead">
+      <svg class="section-wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden>
+        <path class="wave-path-a" d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="currentColor"/>
+      </svg>
+      <div class="container lead-inner">
+        <div class="lead-eyebrow" data-fade>
+          <span class="dot sage"></span>
+          <span class="mono-label">Custom Growth Blueprint · Free for qualified restaurants</span>
+        </div>
+
+        <h2 class="display lead-title" data-split>
+          Receive your custom growth blueprint.
+        </h2>
+
+        <p class="lead-sub" data-fade>
+          A 14-page private analysis of your restaurant's positioning, social presence, Google footprint and
+          reservation funnel — with a 90-day playbook tailored to your kitchen.
+        </p>
+
+        <div class="lead-ctas" data-fade>
+          <a href="#contact" class="btn btn-primary btn-lg" data-hover>
+            Request a Private Growth Consultation
+            <span class="arrow-mini" aria-hidden>→</span>
+          </a>
+          <a href="mailto:hello@aetherstudios.in" class="btn btn-outline btn-lg" data-hover>
+            Email us directly
+          </a>
+        </div>
+
+        <ul class="lead-bullets">
+          <li data-fade><span class="tick">✓</span> Reply within one business day</li>
+          <li data-fade><span class="tick">✓</span> No obligation · No pitch deck spam</li>
+          <li data-fade><span class="tick">✓</span> Direct line to a strategist, not a sales rep</li>
+        </ul>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section class="section" id="contact">
+    <section class="section section-contact" id="contact">
       <div class="container">
-        <div class="sec-head" data-contact-fade>
-          <span class="mono-label">05 — Contact</span>
+        <div class="sec-head" data-fade>
+          <span class="mono-label">06 — Talk to us</span>
           <span class="hairline"></span>
         </div>
 
         <div class="contact-grid">
           <div class="contact-left">
-            <h2 class="display contact-title" data-contact-title>
-              Let's build something exceptional.
+            <h2 class="display section-title" data-split>
+              Schedule your strategic growth session.
             </h2>
-            <p class="contact-lead" data-contact-fade>
-              A short brief is enough — timeline, scope, reference. I reply within one business day.
-              Currently taking on two new engagements for Q2.
+            <p class="section-lead" data-fade>
+              Tell us about your restaurant. We'll come back within one business day with a calendar invite
+              and a short pre-call brief — so we don't waste your time on the call.
             </p>
-            <div class="contact-ctas" data-contact-fade>
-              <a href="mailto:contact@aetherstudio.in" class="btn btn-primary" data-hover>
-                <span>contact@aetherstudio.in</span>
-              </a>
-              
-                <span></span>
-                
-              </a>
-            </div>
-            <div class="contact-meta" data-contact-fade>
+
+            <div class="contact-meta" data-fade>
+              <div>
+                <div class="mono-label muted">Direct</div>
+                <a href="mailto:hello@aetherstudios.in" data-hover>hello@aetherstudios.in</a>
+              </div>
               <div>
                 <div class="mono-label muted">Based</div>
-                <div>India · Remote worldwide</div>
+                <div>India · Working with restaurants nationwide</div>
+              </div>
+              <div>
+                <div class="mono-label muted">Hours</div>
+                <div>Mon – Sat · 10:00 – 19:00 IST</div>
               </div>
               <div>
                 <div class="mono-label muted">Follow</div>
-                <div class="socials">
-                  <a href="https://www.instagram.com/aetherstudio.in_?igsh=MXBtbWVqYjJlMTdmZg==" target="_blank" rel="noreferrer" data-hover>
-                    <span class="social-ico" aria-hidden>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                        <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/>
-                        <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/>
-                        <circle cx="17.5" cy="6.5" r="1.1" fill="currentColor"/>
-                      </svg>
-                    </span>
-                    Instagram
-                  </a>
-                </div>
+                <a href="https://instagram.com/aether.studios" target="_blank" rel="noreferrer" data-hover>
+                  <span class="social-ico" aria-hidden>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                      <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/>
+                      <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/>
+                      <circle cx="17.5" cy="6.5" r="1.1" fill="currentColor"/>
+                    </svg>
+                  </span>
+                  Instagram
+                </a>
               </div>
             </div>
           </div>
 
-          <form class="contact-form" id="contactForm" data-contact-fade
-                action="https://api.web3forms.com/submit" method="POST">
-            <!-- Web3Forms required fields -->
-            <input type="hidden" name="access_key" value="4fe65786-b78d-4696-8925-73cdfb1a083c" />
-            <input type="hidden" name="subject" value="New project enquiry — Aether Studio" />
-            <input type="hidden" name="from_name" value="Aether Studio Website" />
-            <!-- Honeypot — bots fill this, humans don't -->
+          <form class="contact-form" id="contactForm"
+                action="https://api.web3forms.com/submit" method="POST" data-fade>
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+            <input type="hidden" name="subject" value="New growth enquiry — Aether Studios" />
+            <input type="hidden" name="from_name" value="Aether Studios Website" />
             <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"
                    style="display:none !important" aria-hidden="true" />
 
             <div id="formContent">
-              <div class="mono-label muted form-kicker">Project enquiry</div>
-              <div class="fields">
-                <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" required /></div>
-                <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required /></div>
-                <div class="field"><label for="company">Company</label><input id="company" name="company" type="text" /></div>
-                <div class="field"><label for="message">Brief</label><textarea id="message" name="message" rows="4" required></textarea></div>
+              <div class="form-kicker">
+                <span class="dot sage"></span>
+                <span class="mono-label">Growth enquiry</span>
               </div>
-              <button type="submit" id="submitBtn" class="btn btn-primary btn-full" data-hover>
-                <span id="submitLabel">Send enquiry</span>
-                <svg class="arrow" width="14" height="14" viewBox="0 0 14 14"><path d="M1 7h12m0 0L7.5 1.5M13 7l-5.5 5.5" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
+
+              <div class="fields">
+                <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" required /></div>
+                <div class="field"><label for="restaurant">Restaurant name</label><input id="restaurant" name="restaurant" type="text" required /></div>
+                <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required /></div>
+                <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required /></div>
+                <div class="field"><label for="message">Tell us about your restaurant (optional)</label><textarea id="message" name="message" rows="3"></textarea></div>
+              </div>
+
+              <button type="submit" id="submitBtn" class="btn btn-primary btn-full btn-lg" data-hover>
+                <span id="submitLabel">Apply for a Growth Partnership</span>
+                <span class="arrow-mini" aria-hidden>→</span>
               </button>
-              <p id="formError" class="mono-label form-error" hidden>Something went wrong. Please email directly — contact@aetherstudio.in</p>
-              <p class="mono-label muted form-foot">Or email directly — contact@aetherstudio.in</p>
+
+              <p id="formError" class="form-error mono-label" hidden>Something went wrong. Please email us directly — hello@aetherstudios.in</p>
+              <p class="form-foot mono-label muted">Or email — hello@aetherstudios.in</p>
             </div>
+
             <div id="formSuccess" class="form-success" hidden>
-              <span class="mono-label blue">Message received</span>
-              <p class="display success-title">Thank you. I'll be in touch within one business day.</p>
+              <span class="mono-label sage-text">Application received</span>
+              <p class="display success-title">Thank you. A strategist will be in touch within one business day.</p>
+              <p class="mono-label muted">In the meantime — feel free to email us at hello@aetherstudios.in for anything urgent.</p>
             </div>
           </form>
         </div>
@@ -557,33 +578,63 @@
       <div class="container">
         <div class="footer-top">
           <div class="footer-col">
-            <div class="mono-label muted">Aether / Studio</div>
-            <p class="display footer-title">Premium websites, quietly engineered.</p>
+            <a href="#top" class="brand brand-large" data-hover>
+              <span class="brand-mark">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+                  <path d="M21 3c0 6-3 12-9 13C6.5 16.5 3 13 3 8c0-3 2-5 5-5 4 0 5 4 9 0Z" fill="currentColor"/>
+                  <path d="M3 21c4-3 8-7 12-13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span class="brand-text">Aether <em>Studios</em></span>
+            </a>
+            <p class="footer-tag display">
+              We fill tables, not just feeds.
+            </p>
           </div>
-          <div class="footer-col right">
-            <a href="mailto:contact@aetherstudio.in" class="footer-email" data-hover>contact@aetherstudio.in</a>
-            <div class="mono-label footer-socials">
-              <a href="https://www.instagram.com/aetherstudio.in_?igsh=MXBtbWVqYjJlMTdmZg==" target="_blank" rel="noreferrer" data-hover>
-                <span class="social-ico" aria-hidden>
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
-                    <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/>
-                    <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/>
-                    <circle cx="17.5" cy="6.5" r="1.1" fill="currentColor"/>
-                  </svg>
-                </span>
-                Instagram
-              </a>
+
+          <div class="footer-col footer-links">
+            <div>
+              <div class="mono-label muted">Agency</div>
+              <ul>
+                <li><a href="#services" data-hover>Services</a></li>
+                <li><a href="#results" data-hover>Results</a></li>
+                <li><a href="#process" data-hover>Process</a></li>
+                <li><a href="#testimonials" data-hover>Stories</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="mono-label muted">Talk to us</div>
+              <ul>
+                <li><a href="mailto:hello@aetherstudios.in" data-hover>hello@aetherstudios.in</a></li>
+                <li><a href="https://instagram.com/aether.studios" target="_blank" rel="noreferrer" data-hover>Instagram</a></li>
+                <li><a href="#contact" data-hover>Apply for partnership</a></li>
+              </ul>
             </div>
           </div>
         </div>
+
         <div class="footer-bottom mono-label">
-          <div id="footerYear">© 2026 Aether Studio — All rights reserved.</div>
-          <div>Designed &amp; built in-house — v1.0</div>
+          <div id="footerYear">© 2026 Aether Studios — Restaurant growth specialists.</div>
+          <div>India · Working with restaurants nationwide</div>
         </div>
       </div>
     </footer>
 
   </main>
+
+  <!-- STICKY FOOTER CTA -->
+  <div class="sticky-cta" id="stickyCta" aria-hidden="true">
+    <div class="container sticky-cta-inner">
+      <div class="sticky-cta-text">
+        <span class="dot sage pulse"></span>
+        <span class="mono-label">Three onboarding slots left this month</span>
+      </div>
+      <a href="#contact" class="btn btn-primary btn-sm" data-hover>
+        Apply for partnership
+        <span class="arrow-mini" aria-hidden>→</span>
+      </a>
+    </div>
+  </div>
 
   <!-- Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>

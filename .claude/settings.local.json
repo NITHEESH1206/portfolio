@@ -4,7 +4,8 @@
       "Bash(npm install *)",
       "Bash(npx next *)",
       "Bash(ls -la *.png *.jpg *.jpeg *.webp)",
-      "Bash(ls -la assets/ images/ img/ public/)"
+      "Bash(ls -la assets/ images/ img/ public/)",
+      "Bash(node _export-jpg.cjs)"
     ]
   }
 }

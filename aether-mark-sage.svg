@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Aether Studios mark">
+  <!-- Soft circular pad -->
+  <rect width="256" height="256" rx="64" fill="none"/>
+  <g transform="translate(64 64) scale(5.333)">
+    <!-- Leaf body -->
+    <path d="M21 3c0 6-3 12-9 13C6.5 16.5 3 13 3 8c0-3 2-5 5-5 4 0 5 4 9 0Z" fill="#7E9171"/>
+    <!-- Stem flourish -->
+    <path d="M3 21c4-3 8-7 12-13" fill="none" stroke="#7E9171" stroke-width="1.4" stroke-linecap="round"/>
+  </g>
+</svg>

@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aether Studios — Logo download</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" />
+  <style>
+    :root {
+      --bg: #EDF2E5;
+      --fg: #0E1410;
+      --muted: #5A6655;
+      --sage: #7E9171;
+      --sage-deep: #5F7657;
+      --line: rgba(14,20,16,0.10);
+      --white: #FFFFFF;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      background:
+        radial-gradient(900px 600px at 100% 0%, rgba(156,175,136,0.30), transparent 60%),
+        radial-gradient(700px 500px at 0% 60%, rgba(126,145,113,0.18), transparent 55%),
+        var(--bg);
+      color: var(--fg);
+      min-height: 100vh;
+      padding: 56px 24px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 1100px; margin: 0 auto; }
+    .kicker {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 14px 8px 12px;
+      border-radius: 999px;
+      background: var(--white);
+      border: 1px solid rgba(126,145,113,0.4);
+      font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--sage-deep); font-weight: 500;
+      margin-bottom: 24px;
+    }
+    .kicker .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sage); }
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 16px;
+      max-width: 16ch;
+    }
+    p.lead {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.6;
+      max-width: 56ch;
+      margin-bottom: 48px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @media (min-width: 700px)  { .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1100px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: transform 0.5s cubic-bezier(0.16,1,0.3,1), border-color 0.5s, box-shadow 0.5s;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(126,145,113,0.5);
+      box-shadow: 0 22px 48px -24px rgba(126,145,113,0.4);
+    }
+    .preview {
+      aspect-ratio: 4 / 3;
+      display: flex; align-items: center; justify-content: center;
+      padding: 32px;
+    }
+    .preview.dark { background: var(--fg); }
+    .preview.lockup { aspect-ratio: 16 / 5; padding: 24px 32px; }
+    .preview img { max-width: 100%; max-height: 100%; }
+    .body {
+      padding: 22px 24px 26px;
+      display: flex; flex-direction: column; gap: 12px;
+      border-top: 1px solid var(--line);
+    }
+    .meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .name { font-weight: 600; letter-spacing: -0.01em; font-size: 1.05rem; }
+    .size { color: var(--muted); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      background: var(--sage);
+      color: var(--white);
+      font-size: 14px; font-weight: 500;
+      border: 0; cursor: pointer;
+      box-shadow: 0 14px 32px -10px rgba(126,145,113,0.5);
+      transition: transform 0.5s cubic-bezier(0.16,1,0.3,1), background 0.4s, box-shadow 0.5s;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background: var(--sage-deep);
+      transform: translateY(-1px);
+      box-shadow: 0 22px 44px -12px rgba(95,118,87,0.6);
+    }
+    .btn .arr { transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); }
+    .btn:hover .arr { transform: translateX(3px); }
+    .footer-note {
+      margin-top: 56px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+      max-width: 60ch;
+    }
+    code {
+      background: rgba(14,20,16,0.06);
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-family: ui-monospace, "JetBrains Mono", Menlo, Consolas, monospace;
+      font-size: 0.85em;
+      letter-spacing: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="kicker"><span class="dot"></span>Brand assets</div>
+    <h1>Aether Studios — logo files.</h1>
+    <p class="lead">
+      Click any button below to download the JPG. Each file is full-resolution, sRGB, white or black background as labelled.
+      All files also exist as scalable SVGs at the project root if you ever need vector versions.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <div class="preview"><img src="aether-mark-sage.jpg" alt="Aether mark — sage on white"></div>
+        <div class="body">
+          <div class="meta">
+            <span class="name">Mark · Sage on White</span>
+            <span class="size">1024 × 1024 · JPG</span>
+          </div>
+          <a class="btn" href="aether-mark-sage.jpg" download>
+            Download JPG <span class="arr">↓</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="preview"><img src="aether-mark-black.jpg" alt="Aether mark — black on white"></div>
+        <div class="body">
+          <div class="meta">
+            <span class="name">Mark · Black on White</span>
+            <span class="size">1024 × 1024 · JPG</span>
+          </div>
+          <a class="btn" href="aether-mark-black.jpg" download>
+            Download JPG <span class="arr">↓</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="preview dark"><img src="aether-mark-white.jpg" alt="Aether mark — white on black"></div>
+        <div class="body">
+          <div class="meta">
+            <span class="name">Mark · White on Black</span>
+            <span class="size">1024 × 1024 · JPG</span>
+          </div>
+          <a class="btn" href="aether-mark-white.jpg" download>
+            Download JPG <span class="arr">↓</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="preview lockup"><img src="aether-logo-lockup.jpg" alt="Aether Studios full lockup"></div>
+        <div class="body">
+          <div class="meta">
+            <span class="name">Full lockup · Mark + Wordmark</span>
+            <span class="size">2160 × 600 · JPG</span>
+          </div>
+          <a class="btn" href="aether-logo-lockup.jpg" download>
+            Download JPG <span class="arr">↓</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <p class="footer-note">
+      Need PNG with transparency or a print-ready PDF? The original SVGs (<code>aether-mark-sage.svg</code>,
+      <code>aether-mark-black.svg</code>, <code>aether-mark-white.svg</code>, <code>aether-logo-lockup.svg</code>)
+      live at the project root and open in any modern image editor — just export to whatever format you need.
+    </p>
+  </div>
+</body>
+</html>

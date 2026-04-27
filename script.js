@@ -1,222 +1,42 @@
-/* ==============================
-   AETHER — Luxury Portfolio JS
-============================== */
+/* =================================================
+   AETHER STUDIOS — Restaurant Growth Agency
+   Lenis · GSAP · ScrollTrigger · SplitType · Web3Forms
+================================================= */
 
 (function () {
   const { gsap } = window;
   if (gsap && window.ScrollTrigger) gsap.registerPlugin(window.ScrollTrigger);
 
-  // ------- Data -------
-  const projects = [
-    {
-      n: "01",
-      client: "Elegancia · Coonoor",
-      title: "Fine-dining experience for a hillside restaurant in the Nilgiris",
-      tags: ["Restaurant", "Reservations", "CMS"],
-      year: "2025",
-      image: "./elegancia.png",
-      accent: "violet",
-      large: true
-    },
-    {
-      n: "02",
-      client: "Bagaicha · Coonoor",
-      title: "Cinematic brand site for a feast amidst the Nilgiri mist",
-      tags: ["Brand site", "Motion", "Reservations"],
-      year: "2026",
-      image: "./bagaicha.png",
-      accent: "blue",
-      large: true
-    },
-    {
-      n: "03",
-      client: "Reminds — SaaS",
-      title: "Your AI second brain on WhatsApp, captured in a single chat",
-      tags: ["SaaS", "AI", "WhatsApp Cloud API"],
-      year: "2026",
-      image: "./reminds.png",
-      accent: "violet",
-      large: true
-    }
+  // ------- Trust marquee data -------
+  const trustWords = [
+    "Elegancia",
+    "Bagaicha",
+    "Sundara Café",
+    "Forme Hospitality",
+    "Nilgiri Brew House",
+    "Maison Verde",
+    "Hilltop Kitchen",
+    "Coorg Roastery",
+    "Nordlys Maison",
+    "Pavilion 8"
   ];
 
-  const skillGroups = [
-    {
-      title: "Engineering",
-      items: [
-        "Next.js / React", "TypeScript", "Node.js & Edge runtimes",
-        "Headless CMS — Sanity, Contentful", "Shopify Hydrogen",
-        "Performance budgets & Core Web Vitals"
-      ]
-    },
-    {
-      title: "Craft & Motion",
-      items: [
-        "GSAP + ScrollTrigger", "Lenis smooth scroll", "Framer Motion",
-        "WebGL / Three.js", "Custom interaction systems", "Design-to-code handoff"
-      ]
-    },
-    {
-      title: "Delivery",
-      items: [
-        "Vercel, Cloudflare, AWS", "CI/CD, preview environments",
-        "A/B testing & analytics", "Accessibility (WCAG 2.2)",
-        "SEO & schema", "Long-term partnership"
-      ]
-    }
-  ];
-
-  const processWords = ["Strategy", "Design", "Engineering", "Motion", "Launch", "Iterate"];
-  const techWords = [
-    "Next.js","GSAP","Lenis","Shopify","Sanity","TypeScript","Three.js",
-    "Framer Motion","Vercel","Tailwind CSS","Node.js","WebGL"
-  ];
-
-  // ------- Render dynamic DOM -------
-  function renderProjects() {
-    const grid = document.getElementById("projectsGrid");
-    if (!grid) return;
-    grid.innerHTML = projects.map((p) => `
-      <a href="#contact" class="project-card ${p.large ? "large" : ""}" data-project-card data-hover>
-        <div class="project-media-wrap">
-          <div class="project-media" data-project-media style="background-image:url('${p.image}')"></div>
-          <div class="project-overlay"></div>
-          <div class="project-topleft">
-            <span class="mono-label" style="color:rgba(255,255,255,0.8)">${p.n}</span>
-            <span class="accent ${p.accent}"></span>
-          </div>
-          <div class="project-topright mono-label">${p.year}</div>
-        </div>
-        <div class="project-body">
-          <div>
-            <div class="project-client mono-label">${p.client}</div>
-            <h3>${p.title}</h3>
-            <div class="project-tags">
-              ${p.tags.map((t) => `<span class="project-tag">${t}</span>`).join("")}
-            </div>
-          </div>
-          <div class="project-arrow">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
-              <path d="M1 7h12m0 0L7.5 1.5M13 7l-5.5 5.5" stroke="currentColor" stroke-width="1.2"/>
-            </svg>
-          </div>
-        </div>
-      </a>
-    `).join("");
-  }
-
-  function renderSkills() {
-    const grid = document.getElementById("skillsGrid");
-    if (!grid) return;
-    grid.innerHTML = skillGroups.map((g) => `
-      <div class="skill-group" data-skill-group>
-        <div class="skill-title mono-label" data-skill-title>
-          <span class="dot"></span>
-          ${g.title}
-        </div>
-        <ul class="skill-list">
-          ${g.items.map((it) => `<li data-skill-item><span>${it}</span><span class="tick">◆</span></li>`).join("")}
-        </ul>
-      </div>
-    `).join("");
-  }
-
-  function renderMarquee(id, words, bulletClass = "bullet") {
-    const el = document.getElementById(id);
+  function renderTrustMarquee() {
+    const el = document.getElementById("trustMarquee");
     if (!el) return;
-    const chunk = words.map((w) => `<span>${w} <span class="${bulletClass}">✦</span></span>`).join("");
+    const chunk = trustWords
+      .map((w) => `<span>${w} <span class="bullet">●</span></span>`)
+      .join("");
     el.innerHTML = chunk + chunk + chunk;
   }
 
   function renderFooterYear() {
     const el = document.getElementById("footerYear");
-    if (el) el.textContent = `© ${new Date().getFullYear()} Aether Studio — All rights reserved.`;
+    if (el) el.textContent = `© ${new Date().getFullYear()} Aether Studios — Restaurant growth specialists.`;
   }
 
-  renderProjects();
-  renderSkills();
-  renderMarquee("processMarquee", processWords);
-  renderMarquee("techMarquee", techWords);
+  renderTrustMarquee();
   renderFooterYear();
-
-  // ------- Contact form floating labels + submit -------
-  const form = document.getElementById("contactForm");
-  if (form) {
-    form.querySelectorAll(".field input, .field textarea").forEach((input) => {
-      input.addEventListener("input", () => {
-        const wrap = input.closest(".field");
-        if (!wrap) return;
-        wrap.classList.toggle("has-value", input.value.length > 0);
-      });
-    });
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-
-      const content = document.getElementById("formContent");
-      const success = document.getElementById("formSuccess");
-      const submitBtn = document.getElementById("submitBtn");
-      const submitLabel = document.getElementById("submitLabel");
-      const errorEl = document.getElementById("formError");
-      if (!content || !success || !submitBtn || !submitLabel) return;
-
-      // Reset error, set loading state
-      if (errorEl) errorEl.hidden = true;
-      const originalLabel = submitLabel.textContent;
-      submitLabel.textContent = "Sending…";
-      submitBtn.disabled = true;
-      submitBtn.style.opacity = "0.7";
-      submitBtn.style.pointerEvents = "none";
-
-      try {
-        const formData = new FormData(form);
-        const payload = Object.fromEntries(formData.entries());
-
-        const res = await fetch("https://api.web3forms.com/submit", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json"
-          },
-          body: JSON.stringify(payload)
-        });
-
-        const data = await res.json().catch(() => ({}));
-
-        if (res.ok && data.success) {
-          gsap.to(content, {
-            opacity: 0,
-            y: 20,
-            duration: 0.5,
-            ease: "power3.out",
-            onComplete: () => {
-              content.hidden = true;
-              success.hidden = false;
-              gsap.fromTo(
-                success,
-                { opacity: 0, y: 20 },
-                { opacity: 1, y: 0, duration: 0.9, ease: "expo.out" }
-              );
-              form.reset();
-              form.querySelectorAll(".field.has-value").forEach((f) => f.classList.remove("has-value"));
-            }
-          });
-        } else {
-          throw new Error((data && data.message) || "Submit failed");
-        }
-      } catch (err) {
-        if (errorEl) {
-          errorEl.hidden = false;
-          gsap.fromTo(errorEl, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" });
-        }
-        // Restore button so user can retry
-        submitLabel.textContent = originalLabel;
-        submitBtn.disabled = false;
-        submitBtn.style.opacity = "";
-        submitBtn.style.pointerEvents = "";
-      }
-    });
-  }
 
   // ------- Custom cursor -------
   (function cursor() {
@@ -255,29 +75,25 @@
       });
     }
     bindHoverables();
-
-    const mo = new MutationObserver(bindHoverables);
-    mo.observe(document.body, { childList: true, subtree: true });
+    new MutationObserver(bindHoverables).observe(document.body, { childList: true, subtree: true });
   })();
 
   // ------- Lenis smooth scroll -------
   let lenis = null;
   if (window.Lenis) {
     lenis = new window.Lenis({
-      duration: 1.35,
+      duration: 1.3,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
       wheelMultiplier: 1.0,
       touchMultiplier: 1.6
     });
-
     if (window.ScrollTrigger) lenis.on("scroll", window.ScrollTrigger.update);
-
-    gsap.ticker.add((time) => lenis.raf(time * 1000));
+    gsap.ticker.add((t) => lenis.raf(t * 1000));
     gsap.ticker.lagSmoothing(0);
   }
 
-  // Anchor link smooth scroll via Lenis
+  // Anchor links via Lenis
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener("click", (e) => {
       const href = a.getAttribute("href");
@@ -295,8 +111,8 @@
     const root = document.getElementById("loader");
     const num = document.getElementById("loaderNum");
     const bar = document.getElementById("loaderBar");
-    const logo = document.getElementById("loaderLogo");
-    if (!root || !num || !bar || !logo || !gsap) return;
+    const mark = document.getElementById("loaderMark");
+    if (!root || !num || !bar || !mark || !gsap) return;
 
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -317,10 +133,10 @@
       }
     });
 
-    tl.to(logo, { opacity: 1, y: 0, duration: 0.9, ease: "expo.out" }, 0)
+    tl.to(mark, { opacity: 1, y: 0, duration: 0.9, ease: "expo.out" }, 0)
       .to(counter, {
         v: 100,
-        duration: 2.2,
+        duration: 1.8,
         ease: "power2.inOut",
         onUpdate: () => {
           const val = Math.round(counter.v);
@@ -328,22 +144,53 @@
           bar.style.transform = `scaleX(${val / 100})`;
         }
       }, 0.2)
-      .to([num, logo], { y: -40, opacity: 0, duration: 0.9, ease: "expo.inOut", stagger: 0.05 }, "+=0.25")
-      .to(root, { yPercent: -100, duration: 1.1, ease: "expo.inOut" }, "-=0.3");
+      .to([num, mark], { y: -32, opacity: 0, duration: 0.8, ease: "expo.inOut", stagger: 0.05 }, "+=0.2")
+      .to(root, { yPercent: -100, duration: 1.0, ease: "expo.inOut" }, "-=0.3");
   })();
 
-  // ------- Nav scroll state + intro reveal -------
+  // ------- Nav -------
   (function nav() {
     const nav = document.getElementById("nav");
     if (!nav) return;
-    gsap.fromTo(nav, { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 1.1, delay: 3.2, ease: "expo.out" });
+    gsap.fromTo(nav, { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 1.0, delay: 2.6, ease: "expo.out" });
     const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 60);
     window.addEventListener("scroll", onScroll, { passive: true });
   })();
 
-  // ------- Reveal animations -------
-  function waitForFontsAndSplit(el, opts) {
-    // SplitType splits in place; call after fonts ready
+  // ------- Sticky CTA + WhatsApp FAB visibility -------
+  (function stickyAndFab() {
+    const stickyCta = document.getElementById("stickyCta");
+    const waFab = document.getElementById("waFab");
+    const heroEl = document.querySelector(".hero");
+    if (!stickyCta && !waFab) return;
+
+    const onScroll = () => {
+      const scrolled = window.scrollY;
+      const heroBottom = heroEl ? heroEl.getBoundingClientRect().bottom : 600;
+      const past = scrolled > 600 || heroBottom < 0;
+
+      if (stickyCta) stickyCta.classList.toggle("visible", past);
+      if (waFab) waFab.classList.toggle("visible", scrolled > 240);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    // Hide sticky when contact is in view (avoid double CTA noise)
+    const contact = document.getElementById("contact");
+    if (contact && stickyCta && window.ScrollTrigger) {
+      window.ScrollTrigger.create({
+        trigger: contact,
+        start: "top 80%",
+        end: "bottom top",
+        onEnter: () => stickyCta.classList.remove("visible"),
+        onLeaveBack: () => stickyCta.classList.add("visible")
+      });
+    }
+  })();
+
+  // ------- Reveal helpers -------
+  function splitMaybe(el, opts) {
+    if (!window.SplitType) return null;
     return new window.SplitType(el, opts);
   }
 
@@ -351,167 +198,83 @@
     const title = document.querySelector("[data-hero-title]");
     const sub = document.querySelector("[data-hero-sub]");
     const metas = document.querySelectorAll("[data-hero-meta]");
-    const ctas = document.querySelectorAll("[data-hero-cta]");
-    const sheen = document.querySelector("[data-hero-sheen]");
-    const scroll = document.querySelector("[data-hero-scroll]");
-    if (!title || !sub) return;
+    const ctaRow = document.querySelector("[data-hero-cta-row]");
+    const stats = document.querySelector("[data-hero-stats]");
+    const visual = document.querySelector("[data-hero-visual]");
 
-    const splitTitle = waitForFontsAndSplit(title, { types: "lines, words", lineClass: "split-line" });
-    const splitSub = waitForFontsAndSplit(sub, { types: "lines", lineClass: "split-line" });
-
-    gsap.set(splitTitle.words, { yPercent: 120, opacity: 0 });
-    const subInners = splitSub.lines.flatMap((l) => Array.from(l.children));
-    gsap.set(subInners, { yPercent: 110 });
-
-    const tl = gsap.timeline({ delay: 3.3, defaults: { ease: "expo.out" } });
-    tl.to(splitTitle.words, { yPercent: 0, opacity: 1, duration: 1.2, stagger: 0.06 })
-      .to(subInners, { yPercent: 0, duration: 1, stagger: 0.08 }, "-=0.7")
-      .to(metas, { opacity: 1, y: 0, duration: 0.9, stagger: 0.1 }, "-=0.6")
-      .to(ctas, { opacity: 1, y: 0, duration: 0.9, stagger: 0.08 }, "-=0.7")
-      .to(scroll, { opacity: 1, y: 0, duration: 0.9 }, "-=0.5");
-
-    // Parallax sheen on scroll
-    if (window.ScrollTrigger && sheen) {
-      gsap.to(sheen, {
-        yPercent: 30,
-        ease: "none",
-        scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true }
-      });
-      gsap.to(title, {
-        scale: 0.98,
-        opacity: 0.6,
-        ease: "none",
-        scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true }
-      });
-    }
-  }
-
-  function setupAbout() {
-    const p = document.querySelector("[data-about-p]");
-    if (!p) return;
-
-    const split = waitForFontsAndSplit(p, { types: "lines", lineClass: "split-line" });
-    const inners = split.lines.flatMap((l) => Array.from(l.children));
-    gsap.set(inners, { yPercent: 110 });
-
-    window.ScrollTrigger.create({
-      trigger: p,
-      start: "top 78%",
-      onEnter: () => {
-        gsap.to(inners, { yPercent: 0, duration: 1.1, stagger: 0.09, ease: "expo.out", delay: 0.15 });
-      }
-    });
-
-    gsap.utils.toArray("[data-about-fade]").forEach((el, i) => {
-      gsap.to(el, {
-        opacity: 1, y: 0, duration: 1.1, ease: "expo.out",
-        delay: 0.1 + (i % 3) * 0.08,
-        scrollTrigger: { trigger: el, start: "top 85%" }
-      });
-    });
-
-    gsap.utils.toArray("[data-stat-num]").forEach((el, i) => {
-      gsap.fromTo(el,
-        { opacity: 0, y: 60 },
-        {
-          opacity: 1, y: 0, duration: 1.2, ease: "expo.out",
-          delay: i * 0.1,
-          scrollTrigger: { trigger: el, start: "top 88%" }
-        }
-      );
-    });
-  }
-
-  function setupProjects() {
-    gsap.utils.toArray("[data-proj-head]").forEach((el, i) => {
-      gsap.to(el, {
-        opacity: 1, y: 0, duration: 1.1, ease: "expo.out",
-        delay: 0.1 + i * 0.08,
-        scrollTrigger: { trigger: el, start: "top 88%" }
-      });
-    });
-
-    gsap.utils.toArray("[data-project-card]").forEach((card, i) => {
-      gsap.fromTo(card,
-        { opacity: 0, y: 60, scale: 0.96 },
-        {
-          opacity: 1, y: 0, scale: 1, duration: 1.3, ease: "expo.out",
-          delay: (i % 2) * 0.1,
-          scrollTrigger: { trigger: card, start: "top 90%" }
-        }
-      );
-
-      const media = card.querySelector("[data-project-media]");
-      if (media) {
-        gsap.to(media, {
-          yPercent: -8,
-          ease: "none",
-          scrollTrigger: { trigger: card, start: "top bottom", end: "bottom top", scrub: true }
-        });
-      }
-    });
-  }
-
-  function setupSkills() {
-    gsap.utils.toArray("[data-skill-head]").forEach((el, i) => {
-      gsap.to(el, {
-        opacity: 1, y: 0, duration: 1.1, ease: "expo.out",
-        delay: 0.1 + i * 0.08,
-        scrollTrigger: { trigger: el, start: "top 88%" }
-      });
-    });
-
-    gsap.utils.toArray("[data-skill-group]").forEach((group, i) => {
-      const title = group.querySelector("[data-skill-title]");
-      const items = group.querySelectorAll("[data-skill-item]");
-
-      if (title) {
-        gsap.fromTo(title,
-          { opacity: 0, y: 30 },
-          { opacity: 1, y: 0, duration: 1, ease: "expo.out", delay: i * 0.08,
-            scrollTrigger: { trigger: group, start: "top 82%" }
-          });
-      }
-      gsap.fromTo(items,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.9, ease: "power3.out", stagger: 0.08,
-          delay: 0.2 + i * 0.08,
-          scrollTrigger: { trigger: group, start: "top 82%" }
-        });
-    });
-  }
-
-  function setupContact() {
-    const title = document.querySelector("[data-contact-title]");
+    let titleSplit, subSplit;
     if (title) {
-      const split = waitForFontsAndSplit(title, { types: "lines, words", lineClass: "split-line" });
-      gsap.set(split.words, { yPercent: 120 });
+      titleSplit = splitMaybe(title, { types: "lines, words", lineClass: "split-line" });
+      if (titleSplit) gsap.set(titleSplit.words, { yPercent: 120, opacity: 0 });
+    }
+    if (sub) {
+      subSplit = splitMaybe(sub, { types: "lines", lineClass: "split-line" });
+      if (subSplit) gsap.set(subSplit.lines.flatMap((l) => Array.from(l.children)), { yPercent: 110 });
+    }
+
+    const tl = gsap.timeline({ delay: 2.7, defaults: { ease: "expo.out" } });
+
+    if (titleSplit) {
+      tl.to(titleSplit.words, { yPercent: 0, opacity: 1, duration: 1.1, stagger: 0.05 });
+    }
+    if (subSplit) {
+      tl.to(subSplit.lines.flatMap((l) => Array.from(l.children)),
+        { yPercent: 0, duration: 0.9, stagger: 0.06 }, "-=0.7");
+    }
+    if (metas.length)  tl.to(metas,  { opacity: 1, y: 0, duration: 0.8, stagger: 0.08 }, "-=0.6");
+    if (ctaRow)        tl.to(ctaRow, { opacity: 1, y: 0, duration: 0.9 }, "-=0.6");
+    if (stats)         tl.to(stats,  { opacity: 1, y: 0, duration: 0.9 }, "-=0.6");
+    if (visual)        tl.to(visual, { opacity: 1, y: 0, duration: 1.1 }, "-=0.7");
+
+    // Hero stat numbers — count up
+    document.querySelectorAll(".hero-stat strong").forEach((el) => {
+      const text = el.textContent.trim();
+      const match = text.match(/^([+\-]?)(\d+(?:\.\d+)?)(.*)$/);
+      if (!match) return;
+      const sign = match[1];
+      const target = parseFloat(match[2]);
+      const suffix = match[3];
+      const counter = { v: 0 };
 
       window.ScrollTrigger.create({
-        trigger: title,
-        start: "top 82%",
+        trigger: el,
+        start: "top 90%",
+        once: true,
         onEnter: () => {
-          gsap.to(split.words, { yPercent: 0, duration: 1.2, stagger: 0.06, ease: "expo.out", delay: 0.1 });
+          gsap.to(counter, {
+            v: target,
+            duration: 1.6,
+            ease: "power2.out",
+            onUpdate: () => {
+              const isInt = Number.isInteger(target);
+              const display = isInt ? Math.round(counter.v) : counter.v.toFixed(1);
+              el.textContent = `${sign}${display}${suffix}`;
+            }
+          });
+        }
+      });
+    });
+
+    // Subtle parallax on hero collage
+    if (visual && window.ScrollTrigger) {
+      gsap.to(visual.querySelectorAll(".hero-card"), {
+        yPercent: -10,
+        ease: "none",
+        stagger: 0.05,
+        scrollTrigger: {
+          trigger: visual,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true
         }
       });
     }
-
-    gsap.utils.toArray("[data-contact-fade]").forEach((el, i) => {
-      gsap.to(el, {
-        opacity: 1, y: 0, duration: 1.1, ease: "expo.out",
-        delay: 0.1 + i * 0.07,
-        scrollTrigger: { trigger: el, start: "top 88%" }
-      });
-    });
   }
 
-  function setupCaseStudy() {
-    const section = document.getElementById("case-study");
-    if (!section) return;
-
-    // Each case-study title — independent line/word reveal
-    section.querySelectorAll("[data-cs-title]").forEach((title) => {
-      const split = waitForFontsAndSplit(title, { types: "lines, words", lineClass: "split-line" });
+  function setupSplitTitles() {
+    document.querySelectorAll("[data-split]").forEach((title) => {
+      const split = splitMaybe(title, { types: "lines, words", lineClass: "split-line" });
+      if (!split) return;
       gsap.set(split.words, { yPercent: 120 });
 
       window.ScrollTrigger.create({
@@ -520,154 +283,137 @@
         onEnter: () => {
           gsap.to(split.words, {
             yPercent: 0,
-            duration: 1.2,
-            stagger: 0.06,
+            duration: 1.1,
+            stagger: 0.05,
             ease: "expo.out",
             delay: 0.1
           });
         }
       });
     });
+  }
 
-    // Generic fade + slide for eyebrows, leads, captions, tech rows, CTA
-    gsap.utils.toArray("[data-cs-fade]").forEach((el, i) => {
+  function setupFades() {
+    gsap.utils.toArray("[data-fade]").forEach((el, i) => {
       gsap.to(el, {
-        opacity: 1, y: 0, duration: 1.1, ease: "expo.out",
+        opacity: 1,
+        y: 0,
+        duration: 1.1,
+        ease: "expo.out",
         delay: 0.1 + (i % 4) * 0.07,
         scrollTrigger: { trigger: el, start: "top 88%" }
       });
     });
-
-    // Each hero media — scale-in then parallax inside its own frame
-    section.querySelectorAll("[data-cs-media]").forEach((media) => {
-      const img = media.querySelector(".cs-hero-img");
-
-      gsap.fromTo(media,
-        { opacity: 0, y: 60, scale: 0.96 },
-        {
-          opacity: 1, y: 0, scale: 1,
-          duration: 1.4, ease: "expo.out",
-          scrollTrigger: { trigger: media, start: "top 85%" }
-        }
-      );
-
-      if (img) {
-        gsap.to(img, {
-          yPercent: -8,
-          ease: "none",
-          scrollTrigger: {
-            trigger: media,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true
-          }
-        });
-      }
-    });
-
-    // Stats — staggered entrance, restart per article so each row reads as a unit
-    section.querySelectorAll(".cs-stats").forEach((row) => {
-      const stats = row.querySelectorAll("[data-cs-stat]");
-      stats.forEach((el, i) => {
-        gsap.fromTo(el,
-          { opacity: 0, y: 40 },
-          {
-            opacity: 1, y: 0,
-            duration: 1.1, ease: "expo.out",
-            delay: i * 0.08,
-            scrollTrigger: { trigger: row, start: "top 85%" }
-          }
-        );
-      });
-    });
   }
 
-  function setupPricing() {
-    const section = document.getElementById("pricing");
-    if (!section) return;
-
-    // Generic fade-in for headings, lead, kickers
-    gsap.utils.toArray("[data-price-fade]").forEach((el, i) => {
-      gsap.to(el, {
-        opacity: 1, y: 0, duration: 1.1, ease: "expo.out",
-        delay: 0.1 + (i % 3) * 0.08,
-        scrollTrigger: { trigger: el, start: "top 88%" }
-      });
-    });
-
-    // Bullet list — staggered
-    const bullets = section.querySelectorAll("[data-price-bullet]");
-    if (bullets.length) {
-      gsap.fromTo(bullets,
-        { opacity: 0, y: 16 },
-        {
-          opacity: 1, y: 0,
-          duration: 0.9, ease: "expo.out",
-          stagger: 0.08,
-          scrollTrigger: { trigger: bullets[0], start: "top 88%" }
-        }
-      );
-    }
-
-    // Pricing card — scale + fade in
-    const card = section.querySelector("[data-price-card]");
-    if (card) {
-      gsap.fromTo(card,
-        { opacity: 0, y: 60, scale: 0.97 },
-        {
-          opacity: 1, y: 0, scale: 1,
-          duration: 1.4, ease: "expo.out",
-          scrollTrigger: { trigger: card, start: "top 85%" }
-        }
-      );
-    }
-
-    // Rupee number — count up to 24,999
-    const num = section.querySelector("[data-price-num]");
-    if (num) {
-      const target = 24999;
+  function setupResultStats() {
+    // Animate result-card stat numbers when they enter
+    document.querySelectorAll(".result-stats strong").forEach((el) => {
+      const text = el.textContent.trim();
+      const match = text.match(/^([+\-]?)(\d+(?:\.\d+)?)(.*)$/);
+      if (!match) return;
+      const sign = match[1];
+      const target = parseFloat(match[2]);
+      const suffix = match[3];
       const counter = { v: 0 };
-      const formatter = new Intl.NumberFormat("en-IN");
-
-      gsap.fromTo(num,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1, y: 0,
-          duration: 0.8, ease: "expo.out",
-          scrollTrigger: { trigger: num, start: "top 85%" }
-        }
-      );
 
       window.ScrollTrigger.create({
-        trigger: num,
-        start: "top 80%",
+        trigger: el,
+        start: "top 90%",
         once: true,
         onEnter: () => {
           gsap.to(counter, {
             v: target,
-            duration: 1.8,
+            duration: 1.4,
             ease: "power2.out",
             onUpdate: () => {
-              num.textContent = formatter.format(Math.round(counter.v));
+              const isInt = Number.isInteger(target);
+              const display = isInt ? Math.round(counter.v) : counter.v.toFixed(1);
+              el.textContent = `${sign}${display}${suffix}`;
             }
           });
         }
       });
-    }
+    });
   }
 
+  // ------- Contact form (Web3Forms) -------
+  (function contact() {
+    const form = document.getElementById("contactForm");
+    if (!form) return;
+
+    form.querySelectorAll(".field input, .field textarea").forEach((input) => {
+      input.addEventListener("input", () => {
+        const wrap = input.closest(".field");
+        if (!wrap) return;
+        wrap.classList.toggle("has-value", input.value.length > 0);
+      });
+    });
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const content = document.getElementById("formContent");
+      const success = document.getElementById("formSuccess");
+      const submitBtn = document.getElementById("submitBtn");
+      const submitLabel = document.getElementById("submitLabel");
+      const errorEl = document.getElementById("formError");
+      if (!content || !success || !submitBtn || !submitLabel) return;
+
+      if (errorEl) errorEl.hidden = true;
+      const originalLabel = submitLabel.textContent;
+      submitLabel.textContent = "Sending…";
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = "0.7";
+      submitBtn.style.pointerEvents = "none";
+
+      try {
+        const formData = new FormData(form);
+        const payload = Object.fromEntries(formData.entries());
+
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json().catch(() => ({}));
+
+        if (res.ok && data.success) {
+          gsap.to(content, {
+            opacity: 0, y: 16, duration: 0.5, ease: "power3.out",
+            onComplete: () => {
+              content.hidden = true;
+              success.hidden = false;
+              gsap.fromTo(success, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.9, ease: "expo.out" });
+              form.reset();
+              form.querySelectorAll(".field.has-value").forEach((f) => f.classList.remove("has-value"));
+            }
+          });
+        } else {
+          throw new Error((data && data.message) || "Submit failed");
+        }
+      } catch (err) {
+        if (errorEl) {
+          errorEl.hidden = false;
+          gsap.fromTo(errorEl, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" });
+        }
+        submitLabel.textContent = originalLabel;
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = "";
+        submitBtn.style.pointerEvents = "";
+      }
+    });
+  })();
+
+  // ------- Run all reveal setup once fonts are ready -------
   function runAll() {
     setupHero();
-    setupAbout();
-    setupProjects();
-    setupCaseStudy();
-    setupSkills();
-    setupPricing();
-    setupContact();
+    setupSplitTitles();
+    setupFades();
+    setupResultStats();
     if (window.ScrollTrigger) window.ScrollTrigger.refresh();
   }
 
-  // Wait for fonts so SplitType measures correctly
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(runAll);
   } else {
