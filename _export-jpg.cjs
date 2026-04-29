@@ -6,10 +6,12 @@ const root = __dirname;
 
 const jobs = [
   // [svg input, jpg output, width, background]
-  ["aether-mark-sage.svg",   "aether-mark-sage.jpg",   1024, "#FFFFFF"],
-  ["aether-mark-black.svg",  "aether-mark-black.jpg",  1024, "#FFFFFF"],
-  ["aether-mark-white.svg",  "aether-mark-white.jpg",  1024, "#0E1410"],
-  ["aether-logo-lockup.svg", "aether-logo-lockup.jpg", 2160, "#FFFFFF"]
+  ["aether-mark-sage.svg",          "aether-mark-sage.jpg",          1024, "#FFFFFF"],
+  ["aether-mark-black.svg",         "aether-mark-black.jpg",         1024, "#FFFFFF"],
+  ["aether-mark-white.svg",         "aether-mark-white.jpg",         1024, "#0E1410"],
+  ["aether-logo-lockup.svg",        "aether-logo-lockup.jpg",        2160, "#FFFFFF"],
+  ["aether-instagram-dp-sage.svg",  "aether-instagram-dp-sage.jpg",  1080, "#7E9171"],
+  ["aether-instagram-dp-white.svg", "aether-instagram-dp-white.jpg", 1080, "#EDF2E5"]
 ];
 
 (async () => {

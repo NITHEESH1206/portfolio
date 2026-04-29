@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Aether Studios — Logo download</title>
+  <title>Aether Studios — Download logo for Instagram</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" />
@@ -26,7 +26,7 @@
         var(--bg);
       color: var(--fg);
       min-height: 100vh;
-      padding: 56px 24px;
+      padding: 56px 24px 80px;
       -webkit-font-smoothing: antialiased;
     }
     .wrap { max-width: 1100px; margin: 0 auto; }
@@ -47,7 +47,7 @@
       letter-spacing: -0.04em;
       line-height: 1;
       margin-bottom: 16px;
-      max-width: 16ch;
+      max-width: 18ch;
     }
     p.lead {
       color: var(--muted);
@@ -56,17 +56,24 @@
       max-width: 56ch;
       margin-bottom: 48px;
     }
+    h2.section-h {
+      font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--sage-deep); font-weight: 500;
+      margin: 56px 0 20px; display: flex; align-items: center; gap: 14px;
+    }
+    h2.section-h::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--line), transparent); }
+
     .grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 20px;
+      gap: 24px;
     }
-    @media (min-width: 700px)  { .grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (min-width: 1100px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 760px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+
     .card {
       background: var(--white);
       border: 1px solid var(--line);
-      border-radius: 18px;
+      border-radius: 20px;
       overflow: hidden;
       display: flex; flex-direction: column;
       transition: transform 0.5s cubic-bezier(0.16,1,0.3,1), border-color 0.5s, box-shadow 0.5s;
@@ -76,14 +83,43 @@
       border-color: rgba(126,145,113,0.5);
       box-shadow: 0 22px 48px -24px rgba(126,145,113,0.4);
     }
+
     .preview {
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 1 / 1;
       display: flex; align-items: center; justify-content: center;
-      padding: 32px;
+      padding: 28px;
+      background: #FBFAF4;
+      position: relative;
     }
-    .preview.dark { background: var(--fg); }
-    .preview.lockup { aspect-ratio: 16 / 5; padding: 24px 32px; }
-    .preview img { max-width: 100%; max-height: 100%; }
+    .preview img {
+      width: 76%;
+      max-width: 360px;
+      height: auto;
+      border-radius: 50%;
+      box-shadow: 0 20px 50px -22px rgba(14,20,16,0.35);
+    }
+    .preview .ring {
+      position: absolute;
+      width: 80%; height: 80%;
+      border: 1px dashed rgba(126,145,113,0.4);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .preview .ig-pin {
+      position: absolute;
+      bottom: 16px; left: 50%;
+      transform: translateX(-50%);
+      font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--muted);
+      background: rgba(255,255,255,0.7);
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+    }
+    .preview.lockup-preview { aspect-ratio: 16 / 5; padding: 24px 32px; }
+    .preview.lockup-preview img { width: 100%; max-width: none; border-radius: 0; box-shadow: none; }
+    .preview.square-preview img { border-radius: 14px; width: 70%; }
+
     .body {
       padding: 22px 24px 26px;
       display: flex; flex-direction: column; gap: 12px;
@@ -110,7 +146,8 @@
       box-shadow: 0 22px 44px -12px rgba(95,118,87,0.6);
     }
     .btn .arr { transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); }
-    .btn:hover .arr { transform: translateX(3px); }
+    .btn:hover .arr { transform: translateY(2px); }
+
     .footer-note {
       margin-top: 56px;
       color: var(--muted);
@@ -126,20 +163,80 @@
       font-size: 0.85em;
       letter-spacing: 0;
     }
+
+    .featured {
+      background: linear-gradient(180deg, #FFFFFF 0%, #FBFAF4 100%);
+      border: 1px solid rgba(126,145,113,0.35);
+      border-radius: 24px;
+      padding: 28px;
+      margin-bottom: 8px;
+    }
+    .featured-title {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--sage-deep); font-weight: 500;
+      margin-bottom: 18px;
+    }
+    .featured-title .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sage); }
   </style>
 </head>
 <body>
   <div class="wrap">
     <div class="kicker"><span class="dot"></span>Brand assets</div>
-    <h1>Aether Studios — logo files.</h1>
+    <h1>Logo files — ready for Instagram.</h1>
     <p class="lead">
-      Click any button below to download the JPG. Each file is full-resolution, sRGB, white or black background as labelled.
-      All files also exist as scalable SVGs at the project root if you ever need vector versions.
+      The two cards below are sized exactly to Instagram's profile-picture spec: <strong>1080 × 1080 pixels</strong>,
+      with the mark composed inside the circular safe zone so nothing gets cropped. Pick the variant you prefer,
+      click the button, the JPG downloads — then upload it as your DP.
     </p>
+
+    <!-- ========== INSTAGRAM DP ========== -->
+    <div class="featured">
+      <div class="featured-title"><span class="dot"></span>Instagram profile picture · 1080 × 1080</div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="preview">
+            <img src="aether-instagram-dp-sage.jpg" alt="Aether Studios — sage profile picture">
+            <span class="ring" aria-hidden></span>
+            <span class="ig-pin">IG circular crop preview</span>
+          </div>
+          <div class="body">
+            <div class="meta">
+              <span class="name">Sage profile picture</span>
+              <span class="size">1080 × 1080 · JPG</span>
+            </div>
+            <a class="btn" href="aether-instagram-dp-sage.jpg" download="aether-studios-instagram-dp-sage.jpg">
+              Download for Instagram <span class="arr">↓</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="preview">
+            <img src="aether-instagram-dp-white.jpg" alt="Aether Studios — white profile picture">
+            <span class="ring" aria-hidden></span>
+            <span class="ig-pin">IG circular crop preview</span>
+          </div>
+          <div class="body">
+            <div class="meta">
+              <span class="name">Light profile picture</span>
+              <span class="size">1080 × 1080 · JPG</span>
+            </div>
+            <a class="btn" href="aether-instagram-dp-white.jpg" download="aether-studios-instagram-dp-white.jpg">
+              Download for Instagram <span class="arr">↓</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== OTHER FILES ========== -->
+    <h2 class="section-h">Other formats</h2>
 
     <div class="grid">
       <div class="card">
-        <div class="preview"><img src="aether-mark-sage.jpg" alt="Aether mark — sage on white"></div>
+        <div class="preview square-preview"><img src="aether-mark-sage.jpg" alt="Aether mark — sage on white"></div>
         <div class="body">
           <div class="meta">
             <span class="name">Mark · Sage on White</span>
@@ -152,7 +249,7 @@
       </div>
 
       <div class="card">
-        <div class="preview"><img src="aether-mark-black.jpg" alt="Aether mark — black on white"></div>
+        <div class="preview square-preview"><img src="aether-mark-black.jpg" alt="Aether mark — black on white"></div>
         <div class="body">
           <div class="meta">
             <span class="name">Mark · Black on White</span>
@@ -165,7 +262,7 @@
       </div>
 
       <div class="card">
-        <div class="preview dark"><img src="aether-mark-white.jpg" alt="Aether mark — white on black"></div>
+        <div class="preview square-preview" style="background:#0E1410"><img src="aether-mark-white.jpg" alt="Aether mark — white on black"></div>
         <div class="body">
           <div class="meta">
             <span class="name">Mark · White on Black</span>
@@ -178,7 +275,7 @@
       </div>
 
       <div class="card">
-        <div class="preview lockup"><img src="aether-logo-lockup.jpg" alt="Aether Studios full lockup"></div>
+        <div class="preview lockup-preview"><img src="aether-logo-lockup.jpg" alt="Aether Studios full lockup"></div>
         <div class="body">
           <div class="meta">
             <span class="name">Full lockup · Mark + Wordmark</span>
@@ -192,9 +289,11 @@
     </div>
 
     <p class="footer-note">
-      Need PNG with transparency or a print-ready PDF? The original SVGs (<code>aether-mark-sage.svg</code>,
-      <code>aether-mark-black.svg</code>, <code>aether-mark-white.svg</code>, <code>aether-logo-lockup.svg</code>)
-      live at the project root and open in any modern image editor — just export to whatever format you need.
+      The dashed circle on each profile-picture preview shows exactly how Instagram crops the file —
+      the mark sits well inside that boundary, so nothing gets clipped on upload. SVG sources for every
+      file (<code>aether-instagram-dp-sage.svg</code>, <code>aether-instagram-dp-white.svg</code>,
+      <code>aether-mark-sage.svg</code>, <code>aether-logo-lockup.svg</code>) live next to the JPGs at
+      the project root if you ever want to re-export at a different size.
     </p>
   </div>
 </body>
