@@ -534,9 +534,16 @@ html, body, a, button, [data-hover] { cursor: none; }
   position: relative;
   margin-top: 24px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  height: clamp(220px, 30vh, 360px);
+  /* Mobile-first: stack one card per row, photos render at full proportion */
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width: 760px) {
+  .hero-visual {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    height: clamp(220px, 30vh, 360px);
+  }
 }
 .hero-card {
   position: relative;
@@ -545,9 +552,14 @@ html, body, a, button, [data-hover] { cursor: none; }
   background-size: cover;
   background-position: center;
   border: 1px solid var(--line);
-  box-shadow: 0 30px 80px -40px rgba(14,20,16,0.4);
+  box-shadow: 0 22px 50px -28px rgba(14,20,16,0.35);
   overflow: hidden;
+  /* Each card holds its own aspect on mobile so the image is never clipped to a sliver */
+  aspect-ratio: 16 / 10;
   transition: transform 1s var(--ease-expo);
+}
+@media (min-width: 760px) {
+  .hero-card { aspect-ratio: auto; height: 100%; }
 }
 .hero-card::after {
   content: "";
@@ -555,9 +567,12 @@ html, body, a, button, [data-hover] { cursor: none; }
   background: linear-gradient(180deg, rgba(14,20,16,0) 60%, rgba(14,20,16,0.35) 100%);
 }
 .hero-card:hover { transform: translateY(-4px) scale(1.01); }
-.hero-card-1 { transform: translateY(20px); }
-.hero-card-2 { transform: translateY(-20px); }
-.hero-card-3 { transform: translateY(20px); }
+/* Stagger only kicks in on tablet+; on mobile cards sit flush to keep rhythm clean */
+@media (min-width: 760px) {
+  .hero-card-1 { transform: translateY(20px); }
+  .hero-card-2 { transform: translateY(-20px); }
+  .hero-card-3 { transform: translateY(20px); }
+}
 
 /* ============================================
    TRUST STRIP
