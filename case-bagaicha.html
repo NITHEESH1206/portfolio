@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#EDF2E5" />
+  <title>Bagaicha · Case study · Aether Studios</title>
+  <link rel="icon" href="/aetherlogo.jpeg" type="image/jpeg">
+  <meta name="description" content="How Aether Studios shipped Bagaicha's cinematic brand site in 14 days — 99 Lighthouse, 3× direct enquiries, ambient motion on every section." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- AMBIENT FLOWING BACKGROUND -->
+  <div class="bg-flow" aria-hidden>
+    <span class="bg-blob bg-blob-1"></span>
+    <span class="bg-blob bg-blob-2"></span>
+    <span class="bg-blob bg-blob-3"></span>
+    <span class="bg-blob bg-blob-4"></span>
+    <svg class="bg-grid" width="100%" height="100%" preserveAspectRatio="none" aria-hidden>
+      <defs>
+        <pattern id="dotgrid" width="32" height="32" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="1" r="1" fill="currentColor"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#dotgrid)"/>
+    </svg>
+  </div>
+
+  <!-- CURSOR -->
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="index.html#top" class="brand" data-hover>
+        <span class="brand-mark">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+            <path d="M21 3c0 6-3 12-9 13C6.5 16.5 3 13 3 8c0-3 2-5 5-5 4 0 5 4 9 0Z" fill="currentColor"/>
+            <path d="M3 21c4-3 8-7 12-13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand-text">Aether <em>Studios</em></span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html#services" class="nav-link" data-hover>Services</a>
+        <a href="index.html#results" class="nav-link" data-hover>Results</a>
+        <a href="index.html#process" class="nav-link" data-hover>Process</a>
+        <a href="index.html#testimonials" class="nav-link" data-hover>Stories</a>
+        <a href="index.html#contact" class="nav-link" data-hover>Contact</a>
+      </nav>
+
+      <a href="index.html#contact" class="btn btn-primary btn-sm nav-cta" data-hover>
+        Book a Free Call
+        <span class="arrow-mini" aria-hidden>→</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- CASE HERO -->
+    <section class="case-hero">
+      <div class="container">
+        <a href="index.html#results" class="case-back" data-hover>
+          <span aria-hidden>←</span> Back to case studies
+        </a>
+
+        <div class="case-pill">
+          <span class="dot sage"></span>
+          <span class="mono-label">Case study · Hospitality · 2026</span>
+        </div>
+
+        <h1 class="display case-title" data-hero-title>
+          Bagaicha — a feast amidst the mist, cinematic on every screen.
+        </h1>
+
+        <p class="case-sub" data-hero-sub>
+          A destination restaurant losing enquiries to slow-loading aggregator listings. We replaced three
+          vendors with a single fortnight of focused work — and shipped a cinematic brand site that runs
+          flawlessly on patchy hill-station connections.
+        </p>
+
+        <div class="case-cta-row">
+          <a href="https://nitheesh1206.github.io/Bagaicha/" target="_blank" rel="noreferrer" class="btn btn-primary" data-hover>
+            View live website
+            <span aria-hidden>↗</span>
+          </a>
+          <a href="index.html#contact" class="btn btn-outline" data-hover>
+            Start a project like this
+          </a>
+        </div>
+
+        <div class="case-meta-strip">
+          <div>
+            <span class="mono-label muted">Client</span>
+            <strong>Bagaicha, Coonoor</strong>
+          </div>
+          <div>
+            <span class="mono-label muted">Scope</span>
+            <strong>Brand site &amp; motion</strong>
+          </div>
+          <div>
+            <span class="mono-label muted">Timeline</span>
+            <strong>14 days</strong>
+          </div>
+          <div>
+            <span class="mono-label muted">Year</span>
+            <strong>2026</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAPTOP MOCKUPS -->
+    <section class="case-section case-laptops">
+      <div class="container">
+        <div class="case-laptops-grid">
+          <div>
+            <div class="laptop-3d tilt-left">
+              <div class="laptop-screen" style="background-image:url('./bagaicha.png')"></div>
+              <div class="laptop-base"></div>
+            </div>
+            <div class="laptop-caption mono-label">Contact · brand story</div>
+          </div>
+          <div>
+            <div class="laptop-3d tilt-right">
+              <div class="laptop-screen" style="background-image:url('./bagaicha-reservation.png')"></div>
+              <div class="laptop-base"></div>
+            </div>
+            <div class="laptop-caption mono-label">Reservation panel · mobile</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT WE DID + OUTCOME -->
+    <section class="case-section">
+      <div class="container">
+        <div class="case-body-grid">
+
+          <aside class="case-body-aside" data-fade>
+            <div class="case-aside-title">What we shipped</div>
+            <ul class="case-aside-list">
+              <li>Brand &amp; positioning workshop</li>
+              <li>Cinematic site design in Figma</li>
+              <li>Hand-coded build · Next.js</li>
+              <li>Ambient motion system</li>
+              <li>Private-dining enquiry flow</li>
+              <li>SEO foundations &amp; schema</li>
+              <li>Edge deploy + 30-day support</li>
+            </ul>
+
+            <div class="case-aside-title" style="margin-top:40px">Stack</div>
+            <ul class="case-aside-list">
+              <li>Next.js · Tailwind CSS</li>
+              <li>Sanity CMS</li>
+              <li>GSAP · Lenis · Three.js</li>
+              <li>Cloudflare edge functions</li>
+              <li>Stripe deposits</li>
+            </ul>
+          </aside>
+
+          <div class="case-body-main">
+
+            <div class="case-block" data-fade>
+              <div class="case-block-num">01 — The brief</div>
+              <h3>A destination brand losing the sale to listing pages.</h3>
+              <p>
+                Bagaicha had built a cult following but the website didn't reflect it — a generic template,
+                3-second load on broadband (much worse on hill-station 4G), and enquiries leaking to aggregator
+                sites that ranked higher than their own brand. The brief: a site that felt like the room itself,
+                with a private-dining funnel that actually converted.
+              </p>
+            </div>
+
+            <div class="case-block" data-fade>
+              <div class="case-block-num">02 — What we did</div>
+              <h3>A slow, low-lit, deliberate site — ambient motion on every section.</h3>
+              <p>
+                We rebuilt the brand site from the ground up in Next.js. Editorial typography paired with custom
+                photography, ambient sage gradients drifting in the background, slow scroll choreography, and
+                an enquiry flow integrated directly with the kitchen's table-management system. Total image
+                budget kept under 1.2 MB for sub-one-second LCP on slow 4G.
+              </p>
+            </div>
+
+            <div class="case-block" data-fade>
+              <div class="case-block-num">03 — The outcome</div>
+              <h3>3× direct enquiries. 99 Lighthouse. Shipped in fourteen days.</h3>
+              <p>
+                Direct bookings tripled in the first quarter post-launch. Enquiry-to-booking conversion rose
+                from 18% to 41%. The site overtook Instagram and aggregator listings combined to become
+                Bagaicha's strongest acquisition channel.
+              </p>
+
+              <div class="case-outcome-grid">
+                <div><span class="mono-label muted">Direct enquiries</span><strong>3×</strong></div>
+                <div><span class="mono-label muted">Enquiry → booking</span><strong>41%</strong></div>
+                <div><span class="mono-label muted">Lighthouse · all</span><strong>99</strong></div>
+                <div><span class="mono-label muted">LCP · slow 4G</span><strong>0.9s</strong></div>
+                <div><span class="mono-label muted">Time to launch</span><strong>14 days</strong></div>
+                <div><span class="mono-label muted">Image budget</span><strong>1.2 MB</strong></div>
+              </div>
+            </div>
+
+            <div class="case-block" data-fade>
+              <div class="case-block-num">04 — In the owner's words</div>
+              <h3>"Aether shipped in fourteen days. Two weeks. Our old freelancer had been promising it for nine months."</h3>
+              <p style="font-style:italic">
+                — Manyahattan, Founder · Bagaicha
+              </p>
+            </div>
+
+            <div class="case-cta-row" data-fade>
+              <a href="index.html#contact" class="btn btn-primary" data-hover>
+                Start your project
+                <span class="arrow-mini" aria-hidden>→</span>
+              </a>
+              <a href="case-vm-events.html" class="btn btn-outline" data-hover>
+                Next case study →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-col">
+            <a href="index.html#top" class="brand brand-large" data-hover>
+              <span class="brand-mark">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+                  <path d="M21 3c0 6-3 12-9 13C6.5 16.5 3 13 3 8c0-3 2-5 5-5 4 0 5 4 9 0Z" fill="currentColor"/>
+                  <path d="M3 21c4-3 8-7 12-13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span class="brand-text">Aether <em>Studios</em></span>
+            </a>
+            <p class="footer-tag display">
+              Premium websites, shipped in 14 days.
+            </p>
+          </div>
+
+          <div class="footer-col footer-links">
+            <div>
+              <div class="mono-label muted">Agency</div>
+              <ul>
+                <li><a href="index.html#services" data-hover>Services</a></li>
+                <li><a href="index.html#results" data-hover>Case studies</a></li>
+                <li><a href="index.html#process" data-hover>Process</a></li>
+                <li><a href="index.html#testimonials" data-hover>Stories</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="mono-label muted">Talk to us</div>
+              <ul>
+                <li><a href="mailto:contact@aetherstudios.in" data-hover>contact@aetherstudios.in</a></li>
+                <li><a href="tel:+919361092458" data-hover>+91 93610 92458</a></li>
+                <li><a href="https://www.instagram.com/aetherstudio.in_?igsh=MXBtbWVqYjJlMTdmZg==" target="_blank" rel="noreferrer" data-hover>Instagram</a></li>
+                <li><a href="index.html#contact" data-hover>Book a free call</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom mono-label">
+          <div>© 2026 Aether Studios — Web design &amp; development.</div>
+          <div>India · Working with brands nationwide</div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.9/dist/lenis.min.js"></script>
+  <script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

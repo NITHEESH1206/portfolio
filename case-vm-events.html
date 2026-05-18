@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#EDF2E5" />
+  <title>VM Events · Case study · Aether Studios</title>
+  <link rel="icon" href="/aetherlogo.jpeg" type="image/jpeg">
+  <meta name="description" content="How Aether Studios shipped VM Events' new event-management website in 11 days — premium portfolio, enquiry-driven layout, mobile-perfect." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- AMBIENT FLOWING BACKGROUND -->
+  <div class="bg-flow" aria-hidden>
+    <span class="bg-blob bg-blob-1"></span>
+    <span class="bg-blob bg-blob-2"></span>
+    <span class="bg-blob bg-blob-3"></span>
+    <span class="bg-blob bg-blob-4"></span>
+    <svg class="bg-grid" width="100%" height="100%" preserveAspectRatio="none" aria-hidden>
+      <defs>
+        <pattern id="dotgrid" width="32" height="32" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="1" r="1" fill="currentColor"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#dotgrid)"/>
+    </svg>
+  </div>
+
+  <!-- CURSOR -->
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="index.html#top" class="brand" data-hover>
+        <span class="brand-mark">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+            <path d="M21 3c0 6-3 12-9 13C6.5 16.5 3 13 3 8c0-3 2-5 5-5 4 0 5 4 9 0Z" fill="currentColor"/>
+            <path d="M3 21c4-3 8-7 12-13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand-text">Aether <em>Studios</em></span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html#services" class="nav-link" data-hover>Services</a>
+        <a href="index.html#results" class="nav-link" data-hover>Results</a>
+        <a href="index.html#process" class="nav-link" data-hover>Process</a>
+        <a href="index.html#testimonials" class="nav-link" data-hover>Stories</a>
+        <a href="index.html#contact" class="nav-link" data-hover>Contact</a>
+      </nav>
+
+      <a href="index.html#contact" class="btn btn-primary btn-sm nav-cta" data-hover>
+        Book a Free Call
+        <span class="arrow-mini" aria-hidden>→</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- CASE HERO -->
+    <section class="case-hero">
+      <div class="container">
+        <a href="index.html#results" class="case-back" data-hover>
+          <span aria-hidden>←</span> Back to case studies
+        </a>
+
+        <div class="case-pill">
+          <span class="dot sage"></span>
+          <span class="mono-label">Case study · Event management · 2026</span>
+        </div>
+
+        <h1 class="display case-title" data-hero-title>
+          VM Events — a premium portfolio for a premium events team.
+        </h1>
+
+        <p class="case-sub" data-hero-sub>
+          An events company built on reputation, but stuck with a brochure-style site that didn't reflect the
+          quality of their work. We shipped a new portfolio-led site, gallery-rich and enquiry-driven, in eleven days.
+        </p>
+
+        <div class="case-cta-row">
+          <a href="https://nitheesh1206.github.io/vm-events/" target="_blank" rel="noreferrer" class="btn btn-primary" data-hover>
+            View live website
+            <span aria-hidden>↗</span>
+          </a>
+          <a href="index.html#contact" class="btn btn-outline" data-hover>
+            Start a project like this
+          </a>
+        </div>
+
+        <div class="case-meta-strip">
+          <div>
+            <span class="mono-label muted">Client</span>
+            <strong>VM Events</strong>
+          </div>
+          <div>
+            <span class="mono-label muted">Scope</span>
+            <strong>Portfolio site &amp; enquiry funnel</strong>
+          </div>
+          <div>
+            <span class="mono-label muted">Timeline</span>
+            <strong>11 days</strong>
+          </div>
+          <div>
+            <span class="mono-label muted">Year</span>
+            <strong>2026</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAPTOP MOCKUPS -->
+    <section class="case-section case-laptops">
+      <div class="container">
+        <div class="case-laptops-grid">
+          <div>
+            <div class="laptop-3d tilt-left">
+              <div class="laptop-screen" style="background-image:url('./vm-events.png')"></div>
+              <div class="laptop-base"></div>
+            </div>
+            <div class="laptop-caption mono-label">Home · "Turning moments into memories"</div>
+          </div>
+          <div>
+            <div class="laptop-3d tilt-right">
+              <div class="laptop-screen" style="background-image:url('./vm-events-enquiry.png')"></div>
+              <div class="laptop-base"></div>
+            </div>
+            <div class="laptop-caption mono-label">Enquiry flow · "Let's Begin"</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT WE DID + OUTCOME -->
+    <section class="case-section">
+      <div class="container">
+        <div class="case-body-grid">
+
+          <aside class="case-body-aside" data-fade>
+            <div class="case-aside-title">What we shipped</div>
+            <ul class="case-aside-list">
+              <li>Brand &amp; portfolio audit</li>
+              <li>Custom site design in Figma</li>
+              <li>Hand-coded build</li>
+              <li>Gallery &amp; portfolio system</li>
+              <li>Enquiry &amp; quote flow</li>
+              <li>SEO foundations &amp; schema</li>
+              <li>Deploy + 30-day support</li>
+            </ul>
+
+            <div class="case-aside-title" style="margin-top:40px">Stack</div>
+            <ul class="case-aside-list">
+              <li>HTML · Tailwind CSS</li>
+              <li>GSAP · Lenis</li>
+              <li>GitHub Pages</li>
+              <li>Cloudflare</li>
+              <li>Web3Forms</li>
+            </ul>
+          </aside>
+
+          <div class="case-body-main">
+
+            <div class="case-block" data-fade>
+              <div class="case-block-num">01 — The brief</div>
+              <h3>A reputation that out-paced its website.</h3>
+              <p>
+                VM Events had built a strong reputation on word-of-mouth — premium weddings, corporate galas,
+                private celebrations — but the site felt like a brochure. The gallery was buried, the enquiry
+                form was hidden three clicks deep, and the brand felt generic. The brief: a portfolio-led site
+                that made the work the hero and made enquiry the easiest next step.
+              </p>
+            </div>
+
+            <div class="case-block" data-fade>
+              <div class="case-block-num">02 — What we did</div>
+              <h3>A gallery-first home page with the enquiry funnel always one tap away.</h3>
+              <p>
+                We rebuilt the site around the portfolio — full-bleed event photography, scroll-driven story
+                sections, and a sticky enquiry CTA that follows the visitor through every page. The home page
+                opens with a curated reel of recent events, then guides visitors through services, gallery,
+                testimonials and a friction-free enquiry form.
+              </p>
+            </div>
+
+            <div class="case-block" data-fade>
+              <div class="case-block-num">03 — The outcome</div>
+              <h3>2.4× enquiry rate. 98 Lighthouse. Shipped in eleven days.</h3>
+              <p>
+                In the first month after launch, enquiry-form submissions rose 2.4×, average session time
+                doubled, and the bounce rate on mobile dropped from 68% to 24%. The new site overtook
+                Instagram as their leading enquiry channel within six weeks.
+              </p>
+
+              <div class="case-outcome-grid">
+                <div><span class="mono-label muted">Enquiry rate</span><strong>2.4×</strong></div>
+                <div><span class="mono-label muted">Mobile load</span><strong>1.1s</strong></div>
+                <div><span class="mono-label muted">Lighthouse</span><strong>98</strong></div>
+                <div><span class="mono-label muted">Session time</span><strong>2.0×</strong></div>
+                <div><span class="mono-label muted">Bounce · mobile</span><strong>24%</strong></div>
+                <div><span class="mono-label muted">Time to launch</span><strong>11 days</strong></div>
+              </div>
+            </div>
+
+            <div class="case-block" data-fade>
+              <div class="case-block-num">04 — In the owner's words</div>
+              <h3>"The new site finally looks as premium as the events we run. Bookings doubled in week two."</h3>
+              <p style="font-style:italic">
+                — Operations Lead · VM Events
+              </p>
+            </div>
+
+            <div class="case-cta-row" data-fade>
+              <a href="index.html#contact" class="btn btn-primary" data-hover>
+                Start your project
+                <span class="arrow-mini" aria-hidden>→</span>
+              </a>
+              <a href="case-elegancia.html" class="btn btn-outline" data-hover>
+                ← First case study
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-col">
+            <a href="index.html#top" class="brand brand-large" data-hover>
+              <span class="brand-mark">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+                  <path d="M21 3c0 6-3 12-9 13C6.5 16.5 3 13 3 8c0-3 2-5 5-5 4 0 5 4 9 0Z" fill="currentColor"/>
+                  <path d="M3 21c4-3 8-7 12-13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span class="brand-text">Aether <em>Studios</em></span>
+            </a>
+            <p class="footer-tag display">
+              Premium websites, shipped in 14 days.
+            </p>
+          </div>
+
+          <div class="footer-col footer-links">
+            <div>
+              <div class="mono-label muted">Agency</div>
+              <ul>
+                <li><a href="index.html#services" data-hover>Services</a></li>
+                <li><a href="index.html#results" data-hover>Case studies</a></li>
+                <li><a href="index.html#process" data-hover>Process</a></li>
+                <li><a href="index.html#testimonials" data-hover>Stories</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="mono-label muted">Talk to us</div>
+              <ul>
+                <li><a href="mailto:contact@aetherstudios.in" data-hover>contact@aetherstudios.in</a></li>
+                <li><a href="tel:+919361092458" data-hover>+91 93610 92458</a></li>
+                <li><a href="https://www.instagram.com/aetherstudio.in_?igsh=MXBtbWVqYjJlMTdmZg==" target="_blank" rel="noreferrer" data-hover>Instagram</a></li>
+                <li><a href="index.html#contact" data-hover>Book a free call</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom mono-label">
+          <div>© 2026 Aether Studios — Web design &amp; development.</div>
+          <div>India · Working with brands nationwide</div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.9/dist/lenis.min.js"></script>
+  <script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
